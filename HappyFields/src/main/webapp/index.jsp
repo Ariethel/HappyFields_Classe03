@@ -6,6 +6,6 @@
 </head>
 <body>
 <br/>
-<a href="resources/view/registrazione.jsp">Registrazione</a>
+<a href="resources/view/registrazioneOrLogin.jsp">Registrazione</a>
 </body>
 </html>

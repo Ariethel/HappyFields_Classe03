@@ -1,15 +1,15 @@
 package model;
 
-public class Utente {
-
-    public Utente(String username, String password, String provincia, String citta, String via, String iban, String preferenza, long telefono) {
+public class Gestore {
+    public Gestore(String username, String password, String nome, String cognome, String provincia, String citta, String via, String iban, long telefono) {
         this.username = username;
         this.password = password;
+        this.nome = nome;
+        this.cognome = cognome;
         this.provincia = provincia;
         this.citta = citta;
         this.via = via;
         this.iban = iban;
-        this.preferenza = preferenza;
         this.telefono = telefono;
     }
 
@@ -27,6 +27,22 @@ public class Utente {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
     }
 
     public String getProvincia() {
@@ -61,14 +77,6 @@ public class Utente {
         this.iban = iban;
     }
 
-    public String getPreferenza() {
-        return preferenza;
-    }
-
-    public void setPreferenza(String preferenza) {
-        this.preferenza = preferenza;
-    }
-
     public long getTelefono() {
         return telefono;
     }
@@ -77,6 +85,6 @@ public class Utente {
         this.telefono = telefono;
     }
 
-    private String username, password, provincia, citta, via, iban, preferenza;
+    private String username, password, nome, cognome, provincia, citta, via, iban;
     private long telefono;
 }

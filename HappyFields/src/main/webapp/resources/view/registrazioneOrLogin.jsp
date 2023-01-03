@@ -20,7 +20,7 @@
     <div>
         <form name="loginform" action="../../loginUtenteServlet" method="post">
             <input type="text" placeholder="username *" name="username" required pattern="^[a-z0-9]{4,15}$" title="Il campo Username deve contenere 4-15 caratteri"><br>
-            <input type="password" placeholder="password *" name="password" required pattern="^[a-z0-9]{4,15}$" title="Il campo Password deve contenere 4-15 caratteri"><br>
+            <input type="password" placeholder="password *" name="password" required pattern="^[A-Za-z0-9]{4,15}$" title="Il campo Password deve contenere 4-15 caratteri"><br>
             <input type="text" placeholder="provincia *" name="provincia" required pattern="^[A-Z]{2,2}$" title="Il campo Provincia deve contenere max 2 caratteri"><br>
             <input type="text" placeholder="citta *" name="citta" required><br>
             <input type="text" placeholder="via *" name="via" required><br>

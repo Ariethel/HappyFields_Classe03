@@ -47,7 +47,16 @@ body {
     background-color: black;
 }
 
+.titolo{
+    background-color: #2a5324;
+    margin-bottom: -5%;
+    margin-top: 1.7%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 350%;
 
+
+}
 
 .poster{
     display: flex;
@@ -63,12 +72,16 @@ body {
     width: 50%;
     height: 70%;
 
+
+
 }
 .poster__img img{
     object-fit: cover;
     width: 97%;
     height: 100%;
     margin-top: 12%;
+    border: 10px solid black;
+
 }
 
 .poster__content{
@@ -82,10 +95,10 @@ body {
 .button {
     text-decoration: none;
     margin-left: 40%;
-    margin-top: -10%;
+    margin-bottom: 100%;
     padding: 20px;
-    color: beige;
-    background-color: black;
+    color: black;
+    background-color: beige;
     z-index: 2;
 }
 

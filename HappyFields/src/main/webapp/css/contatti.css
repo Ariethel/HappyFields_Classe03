@@ -1,0 +1,74 @@
+body{
+    background-color: black;
+    width: 100%;
+    font-family: "Yuppy TC";
+}
+
+
+
+/* Logo */
+.logo{
+    z-index: 1;
+    width: 15%;
+    height: auto;
+    margin-top: 0;
+    margin-left: 0;
+    display: block;
+}
+
+
+.img-logo{
+    width: 100%;
+    background-size: cover;
+    display: block;
+
+}
+@media (max-width: 768px) {
+    .logo{width: 50%; height: auto;}
+}
+@media (max-width: 480px) {
+    .logo{width: 70%; height: auto;}
+}
+
+/* Memoji */
+.img{
+    background-color: #2a5324;
+    text-align: center;
+    width: 100%;
+}
+
+.img h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 3%;
+}
+
+.img #c,#a,#g,#ant{
+    width: 23%;
+    height: auto;
+    padding: 3% 0 3% 0;
+}
+
+@media (max-width: 768px){
+    .img img{ width: 32%;}
+}
+
+
+/* Social */
+.social{
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.social-img{
+    width: 30px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-label{
+    text-align: center;
+}

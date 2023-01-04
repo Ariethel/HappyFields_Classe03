@@ -1,38 +1,92 @@
 /* Poster (Spiderman) */
-body{
-    background-color: green;
+body {
+    background-color: #2a5324;
+    z-index: 20;
 }
+
+.navbar{
+    position: absolute;
+}
+.container-fluid {
+    background-color: beige;
+    margin-bottom: -1.7%;
+    margin-top: -1%;
+}
+.d-inline-block{
+    width: 7%;
+    height: 5%;
+    margin-left: -0.9%;
+    margin-top: -0.1%;
+    margin-bottom: -0.4%;
+}
+.link-nav{
+    position: absolute;
+    margin-left: 80%;
+    margin-top: 0.5%;
+    text-decoration: none;
+    padding: 15px;
+    color: beige;
+    background-color: black;
+}
+.link-nav1{
+    position: absolute;
+    margin-left: 85.3%;
+    margin-top: 0.5%;
+    text-decoration: none;
+    padding: 15px;
+    color: beige;
+    background-color: black;
+}
+.link-nav2{
+    position: absolute;
+    margin-left: 91.75%;
+    margin-top: 0.5%;
+    text-decoration: none;
+    padding: 15px;
+    color: beige;
+    background-color: black;
+}
+
+
 
 .poster{
     display: flex;
-    height: 110vh;
+    height: 100vh;
     width: 100%;
-    background-color: green;
+    background-color: #2a5324;
     padding-top: 2%;
+
 
 }
 
 .poster__img{
     width: 50%;
     height: 70%;
+
 }
 .poster__img img{
     object-fit: cover;
-    width: 100%;
+    width: 97%;
     height: 100%;
-
+    margin-top: 12%;
 }
 
 .poster__content{
     width: 50%;
     padding: 50px;
 }
-.poster__image{}
+.poster__image{
+    margin-left: 1.5%;
+}
 
 .button {
-    width: 50%;
-    padding: 10px;
+    text-decoration: none;
+    margin-left: 40%;
+    margin-top: -10%;
+    padding: 20px;
+    color: beige;
     background-color: black;
+    z-index: 2;
 }
 
 @media (max-width: 768px) {

@@ -36,7 +36,7 @@ create table evento(
     sport varchar(255) references sport.nome_s,
     #luogo calcolabile da campo
     campo varchar(255) references campo.nome_c,
-    data date not null,
+    data_e date not null,
     ora double not null,
     primary key (titolo, campo)
 );

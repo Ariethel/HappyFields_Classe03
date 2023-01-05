@@ -1,0 +1,32 @@
+package controller;
+
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
+import model.*;
+
+import javax.xml.crypto.Data;
+import java.io.IOException;
+import java.sql.Date;
+
+@WebServlet(name = "creaEventoServlet", value = "/creaEventoServlet")
+public class creaEventoServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nome = request.getParameter("name");
+        Sport sport = new Sport(request.getParameter("sport"));
+        CampoDAO service = new CampoDAO();
+        String nome_c = request.getParameter("campo");
+        Campo campo = service.doRetrieveByNome(nome_c);
+        Date data = Date.valueOf(request.getParameter("data"));
+        double ora = Double.parseDouble(request.getParameter("ora"));
+        EventoDAO service2 = new EventoDAO();
+        Evento e = new Evento(nome, sport, campo, data, ora);
+        service2.doAddEvento(e);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+}

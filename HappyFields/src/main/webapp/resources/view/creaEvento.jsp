@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,14 +8,16 @@
     <h1>Crea Evento</h1>
     <form name="creaEventoForm" action="../../creaEventoServlet" method="get">
         <input type="text" name="name" placeholder="Titolo"><br>
+        <!-- Stampo dinamicamente sport e campi disponibili senza fare direttamente l'accesso al DB dalla jsp -->
         <select name = "sport">
-            <!-- sia per sport che per campo devo printare le informazioni mettendo i dati nella sessione con una servlet
-            (ricordarsi come scrivere codice in java nelle jsp) -->
+            <c:forEach items="${sport}" var="s">
+                <option>${s}</option>
+            </c:forEach>
         </select>
         <select name = "campo">
-            <option value = "campo1">campo 1</option>
-            <option value = "campo2">campo 2</option>
-            <option value = "campo3">campo 3</option>
+            <c:forEach items="${campo}" var="c">
+                <option>${c}</option>
+            </c:forEach>
         </select><br>
         <input type="date" name="data"><br>
         <input type="time" name="ora"><br>

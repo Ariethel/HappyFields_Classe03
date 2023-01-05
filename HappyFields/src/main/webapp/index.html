@@ -23,7 +23,11 @@
 <div class="poster mt-3">
     <div class="poster__img reveal">
         <img class="poster__image" src="images/sport3.jpeg" alt="">
-        <a href="resources/view/creaEvento.jsp" class="button">Crea Evento</a>
+        <!-- Carlo perdonami ho dovuto modificare questo link in un form per rendere dinamiche le info
+            nel prossimo form, potresti centrarlo di nuovo con un div esterno?-->
+        <form action="fillCampoSportServlet">
+            <input type="submit" value="Crea Evento">
+        </form>
     </div>
     <div class="poster__img reveal">
         <img class="poster__image" src="images/sportpalle1.jpg" alt="">

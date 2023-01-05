@@ -12,12 +12,14 @@ import java.io.IOException;
 public class fillCampoSportServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServletContext context = getServletContext();
         SportDAO service = new SportDAO();
-        request.setAttribute("sport", service.doRetriveSportsName());
+        context.setAttribute("sport", service.doRetriveSportsName());
         CampoDAO service2 = new CampoDAO();
-        request.setAttribute("campo", service2.doRetriveFieldsName());
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/creaEvento.jsp");
-        dispatcher.forward(request, response);
+        context.setAttribute("campo", service2.doRetriveFieldsName());
+        response.sendRedirect("resources/view/creaEvento.jsp");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/creaEvento.jsp");
+        //dispatcher.forward(request, response);
     }
 
     @Override

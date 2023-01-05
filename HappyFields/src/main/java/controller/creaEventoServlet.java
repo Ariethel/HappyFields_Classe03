@@ -19,10 +19,12 @@ public class creaEventoServlet extends HttpServlet {
         String nome_c = request.getParameter("campo");
         Campo campo = service.doRetrieveByNome(nome_c);
         Date data = Date.valueOf(request.getParameter("data"));
-        double ora = Double.parseDouble(request.getParameter("ora"));
+        //Ormai solo dio sa come funziona questa conversione da tempo a double
+        double ora = Double.parseDouble((request.getParameter("ora")).replaceAll(":", "."));
         EventoDAO service2 = new EventoDAO();
         Evento e = new Evento(nome, sport, campo, data, ora);
         service2.doAddEvento(e);
+        response.sendRedirect("resources/view/eventoCreatoCorrettamente.jsp");
     }
 
     @Override

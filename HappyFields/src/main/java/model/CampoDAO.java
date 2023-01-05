@@ -27,11 +27,14 @@ public class CampoDAO {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM campo where nome_c = (?)");
             ps.setString(1, campo);
             ResultSet rs = ps.executeQuery();
-            Campo c = new Campo(rs.getString("nome_c"), rs.getString("provincia"), rs.getString("citta"), rs.getString("via"), rs.getDouble("costo"), rs.getDouble("lunghezza"), rs.getDouble("larghezza"), rs.getInt("num_giocatori"));
-            return c;
+            while(rs.next()){
+                Campo c = new Campo(rs.getString("nome_c"), rs.getString("provincia"), rs.getString("citta"), rs.getString("via"), rs.getDouble("costo"), rs.getDouble("lunghezza"), rs.getDouble("larghezza"), rs.getInt("numero_giocatori"));
+                return c;
+            }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        return null;
     }
 }

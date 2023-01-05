@@ -1,56 +1,186 @@
 /* Poster (Spiderman) */
 body {
     background-color: #2a5324;
-    z-index: 20;
 }
 
+
+
+/*Barra di navigazione*/
 .navbar{
-    position: absolute;
+    position: relative;
 }
 .container-fluid {
+    height: 80px;
     background-color: beige;
     margin-bottom: -1.7%;
     margin-top: -1%;
 }
+
 .d-inline-block{
-    width: 7%;
-    height: 5%;
-    margin-left: -0.9%;
+    width: auto;
+    height: 75px;
+    margin-left: -9.9%;
     margin-top: -0.1%;
     margin-bottom: -0.4%;
 }
-.link-nav{
+
+@media (max-width: 1268px) {
+    .container-fluid{
+        height: 100px;
+    }
+    .d-inline-block{
+        height: 100px;
+        width: auto;
+        margin-left: -9.5%;
+        margin-top: -5%;
+    }
+
+}
+
+
+.menu{
+    transition: all 1s cubic-bezier(.215, .61, .355, 1); /* anima tutte le proprietà (cubic beizer accellerazione in 4 punti dell'animazione) */
+    z-index: 1;
+    width: 100%;
+    margin-left: 58%;
+    margin-top: -6.5%;
+}
+.menu li{
+    display: inline-block;
+}
+.link-menu{
+    text-align: center;
+    padding: 20px 60px;
+    color: beige;
+    background-color: black;
+    margin-left: 0.1%;
+    text-decoration: none;
+    display: block;
+}
+
+.link-menu:hover{
+    background-color: gray;
+}
+
+.hamburger{
+    visibility: hidden;
+    display: none;
+    z-index: 0;
+}
+
+.hamburger span{
+    visibility: hidden;
+    z-index: 0;
+    display: none;
+}
+
+@media (max-width: 1268px) {
+    .menu {
+        position: relative;
+        z-index: 11;
+        right: -110%;
+        background: #2a5324;
+        height: 4000px;
+        padding-top: 80px;
+        margin-left: 0;
+        margin-top: -10%;
+    }
+    .menu li{
+        display: block;
+    }
+    .menu li a {
+        padding: 15px 30px;
+        font-size: 20px;
+        margin-top: 5%;
+        margin-bottom: -5%;
+        z-index: 20;
+        background-color: black;
+    }
+
+    .menu--open {
+        right: 0;
+    }
+
+    .hamburger {
+        visibility: visible;
+        display: block;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        z-index: 100;
+    }
+
+    .hamburger span {
+        visibility: visible;
+        background: black;
+        height: 3px;
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+        z-index: 100;
+        position: relative;
+    }
+}
+
+/*
+.link-menu{
     position: absolute;
-    margin-left: 80%;
+    margin-left: 71%;
     margin-top: 0.5%;
     text-decoration: none;
-    padding: 15px;
+    padding: 25px 25px;
     color: beige;
     background-color: black;
 }
-.link-nav1{
+.link-menu:hover{
+    background-color: gray;
+}
+
+.link-menu1{
     position: absolute;
-    margin-left: 85.3%;
+    margin-left: 79%;
     margin-top: 0.5%;
     text-decoration: none;
-    padding: 15px;
+    padding: 15px 5px;
     color: beige;
     background-color: black;
 }
-.link-nav2{
+.link-menu1:hover{
+    background-color: gray;
+}
+
+.link-menu2{
     position: absolute;
-    margin-left: 91.75%;
+    margin-left: 88.35%;
     margin-top: 0.5%;
     text-decoration: none;
-    padding: 15px;
+    padding: 15px 5px;
     color: beige;
     background-color: black;
 }
+.link-menu2:hover{
+    background-color: gray;
+}
+
+
+@media (max-width: 1268px) {
+
+
+}
+
+*/
+
+
+
+
+/*Fine barra di navigazione*/
 
 .titolo{
     background-color: #2a5324;
     margin-bottom: -5%;
-    margin-top: 1.1%;
+    margin-top: 2%;
     text-align: center;
     font-weight: bold;
     font-size: 350%;
@@ -80,8 +210,7 @@ body {
     width: 97%;
     height: 100%;
     margin-top: 12%;
-    border: 10px solid black;
-
+    border: 7px solid black;
 }
 
 .poster__content{
@@ -91,23 +220,36 @@ body {
 .poster__image{
     margin-left: 1.5%;
 }
+.contenitore-button{
+    position: relative;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    padding: 20px;
+    background-color: beige;
+    border: 7px solid black;
+    text-align: center;
+    z-index: 1;
 
+}
 .button {
     text-decoration: none;
     position: relative;
-    margin-left: 30%;
-    margin-right: 1%;
     padding: 20px 80px;
     color: black;
     background-color: beige;
-    z-index: 2;
+    z-index: 0;
+    text-align: center;
 }
 .button:hover{
     background-color: navajowhite;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .poster{flex-wrap: wrap;height: auto;}
     .poster__img,
     .poster__content{width: 100%;}
+
 }
+
+
+

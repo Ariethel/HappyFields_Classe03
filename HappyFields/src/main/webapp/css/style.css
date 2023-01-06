@@ -78,12 +78,13 @@ body {
     .menu {
         position: relative;
         z-index: 11;
-        right: -110%;
         background: #2a5324;
         height: 4000px;
         padding-top: 80px;
-        margin-left: 0;
-        margin-top: -10%;
+        right: -115%;
+        width: 150%;
+        margin-left: -5%;
+        margin-top: -17%;
     }
     .menu li{
         display: block;
@@ -91,8 +92,8 @@ body {
     .menu li a {
         padding: 15px 30px;
         font-size: 20px;
-        margin-top: 5%;
-        margin-bottom: -5%;
+        margin-top: 8%;
+        margin-bottom: -8%;
         z-index: 20;
         background-color: black;
     }
@@ -123,7 +124,9 @@ body {
         position: relative;
     }
 }
-
+@media (max-width: 658px) {
+    .menu {margin-top: -30%}
+}
 /*
 .link-menu{
     position: absolute;
@@ -250,6 +253,43 @@ body {
     .poster__img,
     .poster__content{width: 100%;}
 
+}
+
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h3{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
 }
 
 

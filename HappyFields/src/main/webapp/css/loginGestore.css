@@ -14,13 +14,17 @@ body{
 }
 .titolo{
     font-size: 50px;
-    margin-top: -14%;
-    margin-left: 25%;
-    color: beige;
+    margin-top: -12%;
+    margin-left: 20%;
+    color: rgba(245,245,220);
+    padding: 20px;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
 }
 
 .pagina{
     padding: 80px;
+    margin-top: 2%;
     background-color: beige;
     opacity: 0.9;
     margin-left: 20%;
@@ -38,12 +42,12 @@ body{
 .button {
     text-decoration: none;
     position: relative;
-    padding: 20px 60px;
+    padding: 4% 8%;
     color: black;
     background-color: beige;
     z-index: 0;
     text-align: center;
-    margin-left: 17%;
+    margin-left: 22%;
 }
 
 
@@ -57,7 +61,7 @@ body{
     text-align: center;
     width: 200%;
     margin-left: -40%;
-    margin-bottom: 0;
+    margin-bottom: -10%;
     opacity: 0.8;
 }
 

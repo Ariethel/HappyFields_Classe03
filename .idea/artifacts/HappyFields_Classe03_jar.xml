@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="HappyFields_Classe03:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HappyFields_Classe03_jar</output-path>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

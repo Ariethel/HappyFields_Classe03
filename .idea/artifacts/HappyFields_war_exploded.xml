@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HappyFields:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/HappyFields_war_exploded</output-path>
+    <root id="root">
+      <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <element id="file-copy" path="$PROJECT_DIR$/HappyFields/src/main/webapp/WEB-INF/web.xml" />
+    </root>
+  </artifact>
+</component>

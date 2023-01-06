@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HappyFields_Classe03:jar archive">
+    <output-path>$PROJECT_DIR$/out/artifacts/HappyFields_Classe03_jar_archive</output-path>
+    <root id="archive" name="HappyFields_Classe03_jar archive.war">
+      <element id="artifact" artifact-name="HappyFields_Classe03:jar" />
+    </root>
+  </artifact>
+</component>

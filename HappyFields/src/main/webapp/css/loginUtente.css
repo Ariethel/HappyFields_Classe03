@@ -50,6 +50,40 @@ body{
     margin-left: 22%;
 }
 
+@media (max-width: 968px){
+    body{
+        margin-left: 0%;
+        width: 100%;
+    }
+    .logoimg{
+        margin-left: -1%;
+        opacity: 1;
+    }
+    .titolo{
+        margin-top: 2%;
+        margin-left: 0%;
+        font-size: 30px;
+    }
+
+
+    .pagina{
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .button{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px 50px;
+    }
+}
+
+
+
+
+
 
 
 
@@ -65,8 +99,8 @@ body{
     opacity: 0.8;
 }
 
-@media (max-width: 768px){
-    .footer{width: 100%; font-size: 10px;}
+@media (max-width: 968px){
+    .footer{width: 100%; font-size: 10px; margin-left: 0;}
     .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
 
 }

@@ -52,7 +52,7 @@ body{
 
 @media (max-width: 968px){
     body{
-        margin-left: 0%;
+        margin-left: 0;
         width: 100%;
     }
     .logoimg{
@@ -61,7 +61,7 @@ body{
     }
     .titolo{
         margin-top: 2%;
-        margin-left: 0%;
+        margin-left: 0;
         font-size: 30px;
     }
 
@@ -76,7 +76,7 @@ body{
     .button{
         margin-left: auto;
         margin-right: auto;
-        padding: 15px 50px;
+        padding: 15px 32px;
     }
 }
 

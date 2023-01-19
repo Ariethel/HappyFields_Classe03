@@ -47,6 +47,7 @@ body{
 @media (max-width: 768px) {
     .titolo{
         margin-top: 10%;
+        margin-left: 3%;
     }
     .pagina{
         width: 100%;

@@ -1,10 +1,9 @@
 package controller;
 
+import autenticazione.autenticazioneServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import model.*;
-
 import java.io.IOException;
 
 @WebServlet(name = "loginUtenteServlet", value = "/loginUtenteServlet")
@@ -16,7 +15,7 @@ public class loginUtenteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UtenteDAO service = new UtenteDAO();
+        autenticazioneServiceImpl service = new autenticazioneServiceImpl();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession ssn = null;
@@ -27,7 +26,7 @@ public class loginUtenteServlet extends HttpServlet {
                 ssn.setAttribute("id", username);
                 ssn.setAttribute("password", password);
             }
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.html");
         }else{
             response.sendRedirect("resources/view/badCredentials.jsp");
         }

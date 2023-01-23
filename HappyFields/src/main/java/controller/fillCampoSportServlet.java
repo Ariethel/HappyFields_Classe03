@@ -1,11 +1,10 @@
 package controller;
 
+import gestioneEventi.gestioneEventiServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.CampoDAO;
-import model.SportDAO;
-
 import java.io.IOException;
 
 @WebServlet(name = "fillCampoSportServlet", value = "/fillCampoSportServlet")
@@ -13,7 +12,7 @@ public class fillCampoSportServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
-        SportDAO service = new SportDAO();
+        gestioneEventiServiceImpl service = new gestioneEventiServiceImpl();
         context.setAttribute("sport", service.doRetriveSportsName());
         CampoDAO service2 = new CampoDAO();
         context.setAttribute("campo", service2.doRetriveFieldsName());

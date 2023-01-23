@@ -64,3 +64,9 @@ create table gestisce(
     primary key (gestore, campo)
 );
 
+create table partecipa(
+	username varchar(255) references utente.username,
+    nomeEvento varchar(255) references evento.titolo,
+    primary key (username, nomeEvento)
+);
+

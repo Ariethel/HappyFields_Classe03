@@ -1,10 +1,10 @@
 package controller;
 
+import autenticazione.autenticazioneServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import model.GestoreDAO;
-import model.UtenteDAO;
+import registrazione.registrazioneServiceImpl;
 
 import java.io.IOException;
 
@@ -17,18 +17,18 @@ public class loginGestoreServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        GestoreDAO service = new GestoreDAO();
+        autenticazioneServiceImpl service = new autenticazioneServiceImpl();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession ssn = null;
         //Se username e password corrispondono ad un utente li metto nella sessione HTTP e reindirizzo alla home
-        if (service.doCheckPassword(username, password)) {
+        if (service.doCheckManagerPassword(username, password)) {
             ssn = request.getSession();
             synchronized (ssn) {
                 ssn.setAttribute("id", username);
                 ssn.setAttribute("password", password);
             }
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.html");
         }else{
             response.sendRedirect("resources/view/badCredentials.jsp");
         }

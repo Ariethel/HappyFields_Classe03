@@ -1,12 +1,12 @@
 package controller;
 
+import autenticazione.autenticazioneServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Gestore;
-import model.GestoreDAO;
 import model.Utente;
-import model.UtenteDAO;
+import registrazione.registrazioneServiceImpl;
 
 import java.io.IOException;
 
@@ -19,7 +19,8 @@ public class registerGestoreServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        GestoreDAO service = new GestoreDAO();
+        registrazioneServiceImpl serviceRegister = new registrazioneServiceImpl();
+        autenticazioneServiceImpl service = new autenticazioneServiceImpl();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String nome = request.getParameter("nome");
@@ -31,8 +32,8 @@ public class registerGestoreServlet extends HttpServlet {
         long telefono = Long.parseLong(request.getParameter("telefono"));
         String preferenza = request.getParameter("preferenza");
         Gestore g = new Gestore(username,password, nome, cognome, provincia, citta, via, iban, telefono);
-        if (!service.doCheckUsernameAlredyUsed(g)){
-            service.doAddManager(g);
+        if (!service.doCheckUsernameManagerAlredyUsed(g)){
+            serviceRegister.doAddManager(g);
             response.sendRedirect("resources/view/registerConfirmation.jsp");
         } else response.sendRedirect("resources/view/usernameAlredyInUse.jsp");
 

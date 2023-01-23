@@ -1,10 +1,11 @@
 package controller;
 
+import autenticazione.autenticazioneServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Utente;
-import model.UtenteDAO;
+import registrazione.registrazioneServiceImpl;
 
 import java.io.IOException;
 
@@ -17,7 +18,8 @@ public class registerUtenteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UtenteDAO service = new UtenteDAO();
+        autenticazioneServiceImpl service = new autenticazioneServiceImpl();
+        registrazioneServiceImpl serviceRegister = new registrazioneServiceImpl();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String provincia = request.getParameter("provincia");
@@ -28,7 +30,7 @@ public class registerUtenteServlet extends HttpServlet {
         String preferenza = request.getParameter("preferenza");
         Utente u = new Utente(username,password, provincia, citta, via, iban, preferenza, telefono);
         if (!service.doCheckUsernameAlredyUsed(u)){
-            service.doAddUser(u);
+            serviceRegister.doAddUser(u);
             response.sendRedirect("resources/view/registerConfirmation.jsp");
         } else response.sendRedirect("resources/view/usernameAlredyInUse.jsp");
 

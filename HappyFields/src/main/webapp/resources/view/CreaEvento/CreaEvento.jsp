@@ -1,25 +1,25 @@
 <%--
   Created by IntelliJ IDEA.
   User: carlotammaro
-  Date: 20/01/23
-  Time: 10:47
+  Date: 23/01/23
+  Time: 19:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crea Evento</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css" integrity="sha512-ztsAq/T5Mif7onFaDEa5wsi2yyDn5ygdVwSSQ4iok5BPJQGYz1CoXWZSA7OgwGWrxrSrbF0K85PD5uLpimu4eQ==" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
 
-  <link rel="stylesheet" href="areaUtenteGestore.css">
 
 
-  <title>AreaUtente</title>
+  <link rel="stylesheet" href="creaEvento.css">
 
   <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
@@ -32,24 +32,43 @@
   <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
 </a>
 
-<h1 class="titolo zoom"> Benvenuti nella vostra area utente! </h1>
+<h1 class="titolo">Crea il tuo evento qui!<span class="badge bg-secondary"></span></h1>
 
-<div>
-  <div class="pagina zoom">
-    <div class="gruppo-bottoni">
-      <form action="../ModificaDati/ModificaDatiUtente.jsp">
-        <input type="submit" value="Modifica Dati" class="button">
-      </form>
-      <form action="../Contatti/Contatti.jsp">
-        <input type="submit" value="Contatti" class="button">
-      </form>
-      <form action="../CreaEvento/CreaEvento.jsp">
-        <input type="submit" value="Crea Evento" class="button">
-      </form>
+
+
+<form class="pagina reveal">
+  <div class="gruppoBottoni">
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="titolo">Titolo Evento</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">Sport</label>
+      <select class="form-select" id="inputGroupSelect01">
+        <option class="scelta" selected>Choose...</option>
+        <option value="1">Calcio</option>
+        <option value="2">Calcetto</option>
+        <option value="3">Basket</option>
+        <option value="3">Tennis</option>
+        <option value="3">Padel</option>
+        <option value="3">Pallavolo</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="campo">Campo</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="data">Data</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="ora">Ora</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
-</div>
-
+  <input type="button" class="button" value="Richiedi Evento">
+</form>
 
 
 <!-- Footer -->

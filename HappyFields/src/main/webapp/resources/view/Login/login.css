@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/basket-sfondo3.jpeg");
+    background-image: url("sfondocampo.JPG");
     background-size: cover;
     margin-left: 20%;
     width: 50%;
@@ -11,23 +11,23 @@ body{
     margin-left: -40%;
     width: 200px;
     height: auto;
-    opacity: 0.5;
 }
 .titolo{
     font-size: 50px;
-    margin-top: -10%;
-    margin-left: 33%;
-    margin-right: -30%;
-    color: rgb(139,69,19);
+    margin-top: -12%;
+    margin-left: 20%;
+    color: rgba(245,245,220);
+    padding: 20px;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
 }
 
 .pagina{
     padding: 80px;
-    background-color: rgb(210,105,30);
-    opacity: 0.7;
-    margin-left: 70%;
-    margin-right: -60%;
     margin-top: 2%;
+    background-color: beige;
+    opacity: 0.9;
+    margin-left: 20%;
 }
 
 .input-group{
@@ -36,25 +36,23 @@ body{
 }
 
 .input-group-text{
-    background-color: rgb(139,69,19);
-    color: beige;
+    background-color: navajowhite;
 }
 
 .button {
     text-decoration: none;
     position: relative;
-    padding: 20px 60px;
-    color: beige;
-    background-color: rgb(139,69,19);
+    padding: 4% 8%;
+    color: black;
+    background-color: beige;
     z-index: 0;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4%;
+    margin-left: 36%;
 }
-@media (max-width: 768px){
+
+@media (max-width: 968px){
     body{
-        margin-left: 0%;
+        margin-left: 0;
         width: 100%;
     }
     .logoimg{
@@ -63,7 +61,7 @@ body{
     }
     .titolo{
         margin-top: 2%;
-        margin-left: 20%;
+        margin-left: 0;
         font-size: 30px;
     }
 
@@ -78,11 +76,17 @@ body{
     .button{
         margin-left: auto;
         margin-right: auto;
+        padding: 15px 32px;
     }
 }
-@media (max-width: 468px){
-    .
-}
+
+
+
+
+
+
+
+
 
 /* Footer */
 .footer{
@@ -91,11 +95,11 @@ body{
     text-align: center;
     width: 200%;
     margin-left: -40%;
-    margin-bottom: 0;
+    margin-bottom: -10%;
     opacity: 0.8;
 }
 
-@media (max-width: 768px){
+@media (max-width: 968px){
     .footer{width: 100%; font-size: 10px; margin-left: 0;}
     .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
 

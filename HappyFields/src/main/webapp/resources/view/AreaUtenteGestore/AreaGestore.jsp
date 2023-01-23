@@ -27,8 +27,8 @@
 </head>
 <body>
 
-<a class="logo" href="${pageContext.request.contextPath}/index.html">
-    <img src="${pageContext.request.contextPath}/images/LOGO.jpg" alt="" class="logoimg">
+<a class="logo" href="${pageContext.request.contextPath}home/index.html">
+    <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
 </a>
 
 <h1 class="titolo zoom"> Benvenuti nella vostra area gestore! </h1>

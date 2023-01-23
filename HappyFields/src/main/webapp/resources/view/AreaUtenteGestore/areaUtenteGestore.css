@@ -1,7 +1,8 @@
 body{
-    background-image: url("../images/sfondo-pallavolo2.jpeg");
+    background-image: url("sfondo-pallavolo2.jpeg");
     background-size: cover;
     text-align: center;
+    z-index: 0;
 }
 
 
@@ -10,6 +11,7 @@ body{
     width: 200px;
     height: auto;
     opacity: 0.7;
+    z-index: 10;
 }
 
 .titolo{
@@ -17,6 +19,7 @@ body{
     margin-top: -4%;
     margin-left: 12%;
     color: rgb(139,69,19);
+    z-index: 11;
 }
 
 

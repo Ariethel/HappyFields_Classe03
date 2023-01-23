@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: carlotammaro
+  Date: 20/01/23
+  Time: 10:46
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,10 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css" integrity="sha512-ztsAq/T5Mif7onFaDEa5wsi2yyDn5ygdVwSSQ4iok5BPJQGYz1CoXWZSA7OgwGWrxrSrbF0K85PD5uLpimu4eQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="css/areaUtenteGestore.css">
+    <link rel="stylesheet" href="areaUtenteGestore.css">
 
 
-    <title>AreaUtente</title>
+    <title>AreaGestore</title>
 
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 
@@ -20,17 +27,20 @@
 </head>
 <body>
 
-<a class="logo" href="index.html">
-    <img src="images/LOGO.jpg" alt="" class="logoimg">
+<a class="logo" href="${pageContext.request.contextPath}/index.html">
+    <img src="${pageContext.request.contextPath}/images/LOGO.jpg" alt="" class="logoimg">
 </a>
 
-<h1 class="titolo zoom"> Benvenuti nella vostra area utente! </h1>
+<h1 class="titolo zoom"> Benvenuti nella vostra area gestore! </h1>
 
 <div>
     <div class="pagina zoom">
         <div class="gruppo-bottoni">
-            <form action="ModificaDatiUtente.html">
+            <form action="ModificaDatiGestore.html">
                 <input type="submit" value="Modifica Dati" class="button">
+            </form>
+            <form action="ModificaCampi.html">
+                <input type="submit" value="Modifica Campi" class="button">
             </form>
             <form action="contatti.html">
                 <input type="submit" value="Contatti" class="button">

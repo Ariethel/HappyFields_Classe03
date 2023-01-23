@@ -1,18 +1,14 @@
 package controller;
 
 import gestioneEventi.gestioneEventiServiceImpl;
-import jakarta.servlet.ServletContext;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.*;
+import jakarta.servlet.http.*;
+import jakarta.servlet.annotation.*;
 import model.CampoDAO;
-
 import java.io.IOException;
 
 @WebServlet(name = "fillCampoSportServlet", value = "/fillCampoSportServlet")
-public class fillCampoSportServlet extends HttpServlet {
+public class fillCampoSportCreaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
@@ -20,7 +16,7 @@ public class fillCampoSportServlet extends HttpServlet {
         context.setAttribute("sport", service.doRetriveSportsName());
         CampoDAO service2 = new CampoDAO();
         context.setAttribute("campo", service2.doRetriveFieldsName());
-        response.sendRedirect("resources/view/Registrazione/RegistrazioneUtente.jsp");
+        response.sendRedirect("resources/view/creaEvento.jsp");
         //RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/creaEvento.jsp");
         //dispatcher.forward(request, response);
     }

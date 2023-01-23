@@ -1,3 +1,5 @@
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: carlotammaro
@@ -71,15 +73,9 @@
     </div>
     <div class="input-group mb-3">
       <label class="input-group-text" for="inputGroupSelect01">Pref. Sport</label>
-      <select class="form-select" id="inputGroupSelect01">
-        <option class="scelta" selected>Choose...</option>
-        <option value="1">Calcio</option>
-        <option value="2">Calcetto</option>
-        <option value="3">Basket</option>
-        <option value="3">Tennis</option>
-        <option value="3">Padel</option>
-        <option value="3">Pallavolo</option>
-      </select>
+      <c:forEach items="${sport}" var="s">
+        <option>${s}</option>
+      </c:forEach>
     </div>
   </div>
   <input type="button" class="button" value="Conferma Registrazione">

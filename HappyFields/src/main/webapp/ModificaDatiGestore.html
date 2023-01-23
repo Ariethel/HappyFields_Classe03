@@ -26,7 +26,9 @@
 
 <h1 class="titolo">MODIFICA I TUOI DATI<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal">
+
+<!-- IMPORTANTE UNA VOLTA SPOSTATO FARE IL REDIRECT CORRETTO DI TUTTE LE SERVLET -->
+<form class="pagina reveal" action="/modificaDatiGestoreServlet" action="GET">
     <h2 class="subtitolo">Modifica dati account<span class="badge bg-secondary"></span></h2>
     <div class="gruppoBottoni">
         <div class="input-group mb-3">
@@ -42,8 +44,11 @@
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
     </div>
-    <input type="button" class="button" value="Conferma Modifiche">
+    <input type="submit" class="button" value="Conferma Modifiche">
 </form>
+
+
+<!-- IMPORTANTE UNA VOLTA SPOSTATO FARE IL REDIRECT CORRETTO DI TUTTE LE SERVLET -->
 <form class="pagina reveal">
     <h2 class="subtitolo">Modifica dati personali<span class="badge bg-secondary"></span></h2>
     <div class="gruppoBottoni">
@@ -76,7 +81,7 @@
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
     </div>
-    <input type="button" class="button" value="Conferma Modifiche">
+    <input type="submit" class="button" value="Conferma Modifiche">
 </form>
 
 

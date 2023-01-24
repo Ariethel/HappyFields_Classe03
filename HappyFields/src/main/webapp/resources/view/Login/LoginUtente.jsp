@@ -49,14 +49,6 @@
   <input type="submit" class="button" value="Login">
 </form>
 
-<!-- Registrati come utente -->
-<form class="link-menu" action="../fillCampoSportServlet"><input type="submit" value="Registrati come utente"></form>
-<br>
-<!-- Accedi come gestore -->
-<a href ="./LoginGestore.jsp">
-  Registrati/Accedi come gestore
-</a>
-
 <!-- Footer -->
 <footer class="footer">
   <div class="grid">

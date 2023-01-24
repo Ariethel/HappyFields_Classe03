@@ -50,10 +50,6 @@
   <input type="submit" class="button" value="Login">
 </form>
 
-<!-- Registrati come Gestore -->
-<a href ="../Registrazione/RegistrazioneGestore.jsp">
-  Registrati/Accedi come gestore
-</a>
 
 
 <!-- Footer -->

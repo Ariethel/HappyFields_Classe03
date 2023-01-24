@@ -14,6 +14,9 @@ public class fillBachecaEventiServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         gestioneEventiServiceImpl service = new gestioneEventiServiceImpl();
         ArrayList<Evento> eventi = service.doRetriveAllMatch();
+        HttpSession ssn = request.getSession();
+        String id = (String) ssn.getAttribute("id");
+        eventi.removeIf(evento -> service.isPartecipating(id, evento.getNome()));
         request.setAttribute("eventi", eventi);
         RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/BachecaEventi.jsp");
         dispatcher.forward(request, response);

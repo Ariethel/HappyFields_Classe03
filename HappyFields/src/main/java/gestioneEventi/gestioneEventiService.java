@@ -18,4 +18,6 @@ public interface gestioneEventiService {
     public ArrayList<Evento> doRetriveAllMatch();
 
     void doAddPlayer(String id, String nomeE);
+
+    boolean isPartecipating(String id, String nomeE);
 }

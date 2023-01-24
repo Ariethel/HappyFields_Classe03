@@ -38,7 +38,7 @@
 <h1 class="titolo"> Bentornato in Happy Fields! Scegli la modalita di accesso!</h1>
 
 <div class="gruppo-bottoni zoom">
-  <a class="buttonL" href="RegistrazioneUtente.jsp">Registrazione Utente</a></li>
+  <a class="buttonL" href="${pageContext.request.contextPath}/fillCampoSportServlet">Registrazione Utente</a></li>
   <a class="buttonL" href="RegistrazioneGestore.jsp">Registrazione Gestore</a></li>
 </div>
 

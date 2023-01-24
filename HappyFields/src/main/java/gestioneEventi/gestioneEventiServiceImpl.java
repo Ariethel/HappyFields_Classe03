@@ -97,4 +97,20 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
             throw new RuntimeException(er);
         }
     }
+
+    @Override
+    public boolean isPartecipating(String id, String nomeE) {
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM partecipa WHERE username = (?) AND nomeEvento = (?)");
+            ps.setString(1, id);
+            ps.setString(2, nomeE);
+            ResultSet rs = ps.executeQuery();
+            if (!rs.next()) return false;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return true;
+    }
+
+
 }

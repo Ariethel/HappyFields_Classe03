@@ -26,7 +26,7 @@ public class loginUtenteServlet extends HttpServlet {
                 ssn.setAttribute("id", username);
                 ssn.setAttribute("password", password);
             }
-            response.sendRedirect("index.html");
+            response.sendRedirect("home/indexUtente.html");
         }else{
             response.sendRedirect("resources/view/badCredentials.jsp");
         }

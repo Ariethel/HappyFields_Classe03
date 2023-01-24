@@ -36,19 +36,24 @@
 
 <h1 class="titolo">Hey, Bentornato!<br>Vuoi lavorare?<br>Accedi subito!<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal">
+<form class="pagina reveal" action="../../../loginGestoreServlet" method="post">
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="email">E-mail</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >E-mail</span>
+      <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="password">Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Password</span>
+      <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
-  <input type="button" class="button" value="Login">
+  <input type="submit" class="button" value="Login">
 </form>
+
+<!-- Registrati come Gestore -->
+<a href ="../Registrazione/RegistrazioneGestore.jsp">
+  Registrati/Accedi come gestore
+</a>
 
 
 <!-- Footer -->

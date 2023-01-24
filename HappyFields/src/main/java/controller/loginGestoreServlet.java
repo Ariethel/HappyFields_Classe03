@@ -28,7 +28,7 @@ public class loginGestoreServlet extends HttpServlet {
                 ssn.setAttribute("id", username);
                 ssn.setAttribute("password", password);
             }
-            response.sendRedirect("index.html");
+            response.sendRedirect("home/indexGestore.html");
         }else{
             response.sendRedirect("resources/view/badCredentials.jsp");
         }

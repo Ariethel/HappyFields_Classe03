@@ -35,20 +35,27 @@
 
 <h1 class="titolo">Hey, Bentornato!<br>Vuoi giocare?<br>Accedi subito!<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal">
+<form class="pagina reveal" action="../../../loginUtenteServlet" method="post">
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="username">Username</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Username</span>
+      <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="password">Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Password</span>
+      <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
-  <input type="button" class="button" value="Login">
+  <input type="submit" class="button" value="Login">
 </form>
 
+<!-- Registrati come utente -->
+<form class="link-menu" action="../fillCampoSportServlet"><input type="submit" value="Registrati come utente"></form>
+<br>
+<!-- Accedi come gestore -->
+<a href ="./LoginGestore.jsp">
+  Registrati/Accedi come gestore
+</a>
 
 <!-- Footer -->
 <footer class="footer">

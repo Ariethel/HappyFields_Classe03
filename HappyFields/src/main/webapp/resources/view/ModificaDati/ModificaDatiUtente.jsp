@@ -39,15 +39,15 @@
   <h2 class="subtitolo">Modifica dati account<span class="badge bg-secondary"></span></h2>
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" >Username</span>
+      <span class="input-group-text">Username</span>
       <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" >Password</span>
+      <span class="input-group-text">Password</span>
       <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" >Conferma Password</span>
+      <span class="input-group-text">Conferma Password</span>
       <input type="text" name="Cpassword" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>

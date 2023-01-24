@@ -57,7 +57,7 @@
     </div>
     <div class="input-group mb-3">
       <span class="input-group-text">Città</span>
-      <input type="text" name="città" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <input type="text" name="citta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
       <span class="input-group-text">Via</span>
@@ -73,7 +73,7 @@
     </div>
     <div class="input-group mb-3">
       <label class="input-group-text">Pref. Sport</label>
-      <select name="sport">
+      <select name="preferenza">
         <c:forEach items="${sport}" var="s">
           <option>${s}</option>
         </c:forEach>

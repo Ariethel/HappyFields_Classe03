@@ -35,51 +35,51 @@
 
 <h1 class="titolo">Registrati subito con noi<br>per iniziare a prenotare!<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal" action="../../../registerGestoreServlet">
+<form class="pagina reveal" action="../../../registerGestoreServlet" method="POST">
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="nome">Nome</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Nome</span>
+      <input type="text" name="nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="cognome">Cognome</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Cognome</span>
+      <input type="text" name="cognome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="provincia">Provincia</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Provincia</span>
+      <input type="text" name="provincia" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="città">Città</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Città</span>
+      <input type="text" name="citta" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="via">Via</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Via</span>
+      <input type="text" name="via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="telefono">Telefono</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Telefono</span>
+      <input type="number" name="telefono" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="email">E-mail</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >E-mail</span>
+      <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="iban">Iban</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Iban</span>
+      <input type="text" name="iban" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="password">Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Password</span>
+      <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="Cpassword">Conferma Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Conferma Password</span>
+      <input type="text"  name="Cpassword" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
 
   </div>
-  <input type="button" class="button" value="Conferma Registrazione">
+  <input type="submit" class="button" value="Conferma Registrazione">
 </form>
 
 

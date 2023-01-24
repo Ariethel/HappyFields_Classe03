@@ -30,7 +30,6 @@ public class registerGestoreServlet extends HttpServlet {
         String via = request.getParameter("via");
         String iban = request.getParameter("iban");
         long telefono = Long.parseLong(request.getParameter("telefono"));
-        String preferenza = request.getParameter("preferenza");
         Gestore g = new Gestore(username,password, nome, cognome, provincia, citta, via, iban, telefono);
         if (!service.doCheckUsernameManagerAlredyUsed(g)){
             serviceRegister.doAddManager(g);

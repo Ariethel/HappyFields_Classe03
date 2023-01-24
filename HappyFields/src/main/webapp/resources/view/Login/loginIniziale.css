@@ -1,0 +1,104 @@
+body{
+    z-index: 0;
+    text-align: center;
+    background-image: url("sfondocampo.JPG");
+    background-size: cover;
+    position: relative;
+}
+
+.logoimg{
+    margin-left: -51%;
+    width: 200px;
+    height: auto;
+}
+
+.titolo{
+    font-size: 30px;
+    text-align: center;
+    font-style: oblique;
+    padding: 5%;
+    background-color: #2a5324;
+    opacity: 0.8;
+    color: beige;
+    border: solid 2px black;
+    width: 70%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gruppo-bottoni{
+    display: flex;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttonL{
+    background-color: #2a5324;
+    opacity: 0.8;
+    color: beige;
+    font-size: 26px;
+    border: solid 2px black;
+    padding: 10%;
+    width: 100%;
+    text-decoration: none;
+}
+.buttonL:hover{
+    background-color: black;
+}
+
+
+
+@media (max-width: 768px) {
+    .titolo{
+        margin-top: 15%;
+        width: 100%;
+    }
+
+    .gruppo-bottoni{
+        margin-left: 0;
+        width: 100%;
+    }
+    .buttonL{
+    }
+}
+
+
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px; margin-left: 0;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h4{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}

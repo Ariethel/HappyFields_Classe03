@@ -35,7 +35,7 @@
 
 <h1 class="titolo">Registrati subito con noi<br>per iniziare a prenotare!<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal">
+<form class="pagina reveal" action="../../../registerGestoreServlet">
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
       <span class="input-group-text" id="nome">Nome</span>

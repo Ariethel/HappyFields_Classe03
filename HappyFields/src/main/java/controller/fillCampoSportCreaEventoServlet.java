@@ -7,7 +7,7 @@ import jakarta.servlet.annotation.*;
 import model.CampoDAO;
 import java.io.IOException;
 
-@WebServlet(name = "fillCampoSportServlet", value = "/fillCampoSportServlet")
+@WebServlet(name = "fillCampoSportCreaEventoServlet", value = "/fillCampoSportCreaEventoServlet")
 public class fillCampoSportCreaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

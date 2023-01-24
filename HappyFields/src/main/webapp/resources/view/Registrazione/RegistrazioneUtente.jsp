@@ -37,48 +37,50 @@
 
 <h1 class="titolo">Registrati subito con noi<br>per iniziare a prenotarti!<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal">
+<form class="pagina reveal" action="../../../registerUtenteServlet" method="POST">
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="username">Username</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Username</span>
+      <input type="text" name="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="password">Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Password</span>
+      <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="Cpassword">Conferma Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Conferma Password</span>
+      <input type="text" name="Cpassword" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="provincia">Provincia</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Provincia</span>
+      <input type="text" name="provincia" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="città">Città</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Città</span>
+      <input type="text" name="città" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="via">Via</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Via</span>
+      <input type="text" name="via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="telefono">Telefono</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Telefono</span>
+      <input type="number" name="telefono" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="iban">Iban</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Iban</span>
+      <input type="text" name="iban" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">Pref. Sport</label>
-      <c:forEach items="${sport}" var="s">
-        <option>${s}</option>
-      </c:forEach>
+      <label class="input-group-text">Pref. Sport</label>
+      <select name="sport">
+        <c:forEach items="${sport}" var="s">
+          <option>${s}</option>
+        </c:forEach>
+      </select>
     </div>
   </div>
-  <input type="button" class="button" value="Conferma Registrazione">
+  <input type="submit" class="button" value="Conferma Registrazione">
 </form>
 
 

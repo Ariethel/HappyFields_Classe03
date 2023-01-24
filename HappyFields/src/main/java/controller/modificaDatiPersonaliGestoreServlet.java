@@ -35,7 +35,7 @@ public class modificaDatiPersonaliGestoreServlet extends HttpServlet {
         if(request.getParameter("iban") != null){
             service.doChangeIban(request.getParameter("iban"), id);
         }
-        response.sendRedirect("resources/view/AreaUtenteGestore/AreaGestore.jsp");
+        response.sendRedirect("home/indexGestore.html");
     }
 
     @Override

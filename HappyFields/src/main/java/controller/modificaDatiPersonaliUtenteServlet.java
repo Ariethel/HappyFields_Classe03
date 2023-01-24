@@ -33,7 +33,7 @@ public class modificaDatiPersonaliUtenteServlet extends HttpServlet {
         if(request.getParameter("preferenza") != null){
             service.doChangeSport(request.getParameter("preferenza"), id);
         }
-        response.sendRedirect("resources/view/AreaUtenteGestore/AreaUtente.jsp");
+        response.sendRedirect("home/indexUtente.html");
     }
 
     @Override

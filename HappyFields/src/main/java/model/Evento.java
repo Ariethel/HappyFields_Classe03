@@ -12,6 +12,10 @@ public class Evento {
         this.ora = ora;
     }
 
+    public Evento() {
+
+    }
+
     public String getNome() {
         return nome;
     }

@@ -13,6 +13,10 @@ public class Campo {
         this.num_giocatori = num_giocatori;
     }
 
+    public Campo() {
+
+    }
+
     public String getNome_c() {
         return nome_c;
     }

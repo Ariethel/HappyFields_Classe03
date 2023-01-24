@@ -20,7 +20,7 @@ public class modificaDatiGestoreServlet extends HttpServlet {
             service.doChangePassword(request.getParameter("password"), id);
         }
 
-        response.sendRedirect("resources/view/AreaUtenteGestore/AreaGestore.jsp");
+        response.sendRedirect("home/indexGestore.html");
     }
 
     @Override

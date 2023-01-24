@@ -36,16 +36,16 @@
 <div>
     <div class="pagina zoom">
         <div class="gruppo-bottoni">
-            <form action="ModificaDatiGestore.html">
+            <form action="../ModificaDati/ModificaDatiGestore.jsp">
                 <input type="submit" value="Modifica Dati" class="button">
             </form>
             <form action="ModificaCampi.html">
                 <input type="submit" value="Modifica Campi" class="button">
             </form>
-            <form action="contatti.html">
+            <form action="../Contatti/Contatti.jsp">
                 <input type="submit" value="Contatti" class="button">
             </form>
-            <form action="CreaEvento.html">
+            <form action="../CreaEvento/CreaEvento.jsp">
                 <input type="submit" value="Crea Evento" class="button">
             </form>
         </div>

@@ -33,7 +33,7 @@ public class registerGestoreServlet extends HttpServlet {
         Gestore g = new Gestore(username,password, nome, cognome, provincia, citta, via, iban, telefono);
         if (!service.doCheckUsernameManagerAlredyUsed(g)){
             serviceRegister.doAddManager(g);
-            response.sendRedirect("resources/view/registerConfirmation.jsp");
+            response.sendRedirect("home/indexGestore.html");
         } else response.sendRedirect("resources/view/usernameAlredyInUse.jsp");
 
     }

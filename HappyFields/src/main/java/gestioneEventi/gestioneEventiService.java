@@ -1,6 +1,8 @@
 package gestioneEventi;
 
+import model.Campo;
 import model.Evento;
+import model.Sport;
 import model.Utente;
 
 import java.util.ArrayList;
@@ -11,4 +13,9 @@ public interface gestioneEventiService {
 
     // Sport
     public ArrayList<String> doRetriveSportsName();
+    public Sport doRetriveSport(String nome);
+    public Campo doRetriveCampo(String nome);
+    public ArrayList<Evento> doRetriveAllMatch();
+
+    void doAddPlayer(String id, String nomeE);
 }

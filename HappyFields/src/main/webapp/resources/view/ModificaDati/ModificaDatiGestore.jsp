@@ -29,63 +29,64 @@
 
 <body>
 
-<a class="logo" href="${pageContext.request.contextPath}index.html">
+<a class="logo" href="${pageContext.request.contextPath}index.html" methods="get">
   <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
 </a>
 
 <h1 class="titolo">MODIFICA I TUOI DATI<span class="badge bg-secondary"></span></h1>
 
-<form class="pagina reveal">
+<form class="pagina reveal" action="${pageContext.request.contextPath}/modificaDatiGestoreServlet">
   <h2 class="subtitolo">Modifica dati account<span class="badge bg-secondary"></span></h2>
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="email">E-mail</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">E-mail</span>
+      <input type="text" name="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="password">Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Password</span>
+      <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="Cpassword">Conferma Password</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Conferma Password</span>
+      <input type="text" name="Cpassword" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
-  <input type="button" class="button" value="Conferma Modifiche">
+  <input type="submit" class="button" value="Conferma Modifiche">
 </form>
-<form class="pagina reveal">
+
+<form class="pagina reveal" action="${pageContext.request.contextPath}/modificaDatiPersonaliGestoreServlet" method="get">
   <h2 class="subtitolo">Modifica dati personali<span class="badge bg-secondary"></span></h2>
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="nome">Nome</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Nome</span>
+      <input type="text" name="nome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="cognome">Cognome</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Cognome</span>
+      <input type="text" name="cognome" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="provincia">Provincia</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Provincia</span>
+      <input type="text" name="provincia" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="città">Città</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Città</span>
+      <input type="text" name="città" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="via">Via</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Via</span>
+      <input type="text" name="via" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="telefono">Telefono</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Telefono</span>
+      <input type="number" name="telefono" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="iban">Iban</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Iban</span>
+      <input type="text" name="iban" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
-  <input type="button" class="button" value="Conferma Modifiche">
+  <input type="submit" class="button" value="Conferma Modifiche">
 </form>
 
 

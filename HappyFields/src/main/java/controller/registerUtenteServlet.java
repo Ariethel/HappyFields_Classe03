@@ -31,7 +31,7 @@ public class registerUtenteServlet extends HttpServlet {
         Utente u = new Utente(username,password, provincia, citta, via, iban, preferenza, telefono);
         if (!service.doCheckUsernameAlredyUsed(u)){
             serviceRegister.doAddUser(u);
-            response.sendRedirect("resources/view/registerConfirmation.jsp");
+            response.sendRedirect("home/indexUtente.html");
         } else response.sendRedirect("resources/view/usernameAlredyInUse.jsp");
 
     }

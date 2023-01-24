@@ -1,8 +1,6 @@
-/* Poster (Spiderman) */
 body {
     background-color: #2a5324;
 }
-
 
 /*Barra di navigazione*/
 .navbar{
@@ -128,86 +126,106 @@ body {
 }
 
 
-
-/*Fine barra di navigazione*/
-
-.titolo{
-    background-color: #2a5324;
-    margin-bottom: -5%;
-    margin-top: 2%;
+.carlo{
+    font-size: 30px;
+    font-style: italic;
     text-align: center;
-    font-weight: bold;
-    font-size: 350%;
-
-
-}
-
-.poster{
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    background-color: #2a5324;
-    padding-top: 2%;
-
-
-}
-
-.poster__img{
-    width: 50%;
-    height: 70%;
-
-
-
-}
-.poster__img img{
-    object-fit: cover;
-    width: 97%;
-    height: 100%;
-    margin-top: 12%;
-    border: 7px solid black;
-}
-
-.poster__content{
-    width: 50%;
-    padding: 50px;
-}
-.poster__image{
-    margin-left: 1.5%;
-}
-.contenitore-button{
-    position: relative;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-    padding: 20px;
-    background-color: beige;
-    border: 7px solid black;
-    text-align: center;
-    z-index: 1;
-    margin-top: -1%;
-
-}
-.button {
-    text-decoration: none;
-    position: relative;
-    padding: 20px 80px;
     color: black;
-    background-color: beige;
-    z-index: 0;
+    z-index: 5;
+    margin-top: 4%;
+
+}
+
+
+/*SLIDER IMMAGINI BASIC HOME*/
+.slider-container
+{
+    width: 1000px;
+    height: 550px;
+    background-color: black;
+    margin: 2% auto 4% auto;
     text-align: center;
-}
-.button:hover{
-    background-color: navajowhite;
+    overflow: hidden;
 }
 
-@media (max-width: 968px) {
-    .poster{flex-wrap: wrap;height: auto;}
-    .poster__img,
-    .poster__content{width: 100%;}
-
+.image-container
+{
+    background-color: #2a5324;
+    width: 5100px;
+    height: 550px;
+    margin-left: -5%;
+    clear: both;
+    position: relative;
+    -webkit-transition: left 2s;
+    -moz-transition: left 2s;
+    -o-transition: left 2s;
+    transition: left 2s;
+}
+.slider-image{
+    width: 997px;
+    height: 550px;
+}
+#slider-image-1:target ~ .image-container
+{
+    left: 0;
+}
+#slider-image-2:target ~ .image-container
+{
+    left: -1000px;
+}
+#slider-image-3:target ~ .image-container
+{
+    left: -2000px;
+}
+#slider-image-4:target ~ .image-container
+{
+    left: -3000px;
+}
+#slider-image-5:target ~ .image-container
+{
+    left: -4000px;
+}
+.button-container
+{
+    position: relative;
+    top: -20px;
+}
+.slider-change
+{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: #2a5324;
 }
 
+@media (max-width: 768px) {
+    .carlo{margin-top: 6%;}
+    .slider-container{margin-top: 6%;width: 500px; height: 220px; text-align: center}
+    .image-container{width: 3400px; height: 220px; margin-left: -50%}
+    .slider-image{width: 608px; height: 220px;}
+    #slider-image-1:target ~ .image-container
+    {
+        left: 0;
+    }
+    #slider-image-2:target ~ .image-container
+    {
+        left: -600px;
+    }
+    #slider-image-3:target ~ .image-container
+    {
+        left: -1200px;
+    }
+    #slider-image-4:target ~ .image-container
+    {
+        left: -1800px;
+    }
+    #slider-image-5:target ~ .image-container
+    {
+        left: -2400px;
+    }
 
-
+}
 
 
 /* Footer */
@@ -221,7 +239,7 @@ body {
 }
 
 @media (max-width: 768px){
-    .footer{width: 100%; font-size: 10px;}
+    .footer{width: 100%; font-size: 10px; margin-top: 25%}
     .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
 
 }
@@ -242,10 +260,6 @@ body {
     width: 100%;
     padding-bottom: 50px;
 }
-
-
-
-
 
 
 

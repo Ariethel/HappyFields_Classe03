@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: carlotammaro
@@ -36,38 +37,38 @@
 
 
 
-<form class="pagina reveal">
+<form class="pagina reveal" action="../../../creaEventoServlet" method="GET">
   <div class="gruppoBottoni">
     <div class="input-group mb-3">
-      <span class="input-group-text" id="titolo">Titolo Evento</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text" >Titolo Evento</span>
+      <input type="text" name="titolo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
       <label class="input-group-text" for="inputGroupSelect01">Sport</label>
-      <select class="form-select" id="inputGroupSelect01">
-        <option class="scelta" selected>Choose...</option>
-        <option value="1">Calcio</option>
-        <option value="2">Calcetto</option>
-        <option value="3">Basket</option>
-        <option value="3">Tennis</option>
-        <option value="3">Padel</option>
-        <option value="3">Pallavolo</option>
+      <select class="form-select" name="sport" id="inputGroupSelect01">
+        <c:forEach items="${sport}" var="s">
+          <option>${s}</option>
+        </c:forEach>
       </select>
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="campo">Campo</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Campo</span>
+      <select name="campo" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <c:forEach items="${campo}" var="c">
+          <option>${c}</option>
+        </c:forEach>
+      </select>
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="data">Data</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Data</span>
+      <input type="date" name="data" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
     <div class="input-group mb-3">
-      <span class="input-group-text" id="ora">Ora</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <span class="input-group-text">Ora</span>
+      <input type="time" name="ora" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
   </div>
-  <input type="button" class="button" value="Richiedi Evento">
+  <input type="submit" class="button" value="Richiedi Evento">
 </form>
 
 

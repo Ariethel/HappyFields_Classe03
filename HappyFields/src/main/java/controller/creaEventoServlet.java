@@ -14,7 +14,7 @@ import java.sql.Date;
 public class creaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nome = request.getParameter("name");
+        String nome = request.getParameter("titolo");
         Sport sport = new Sport(request.getParameter("sport"));
         CampoDAO service = new CampoDAO();
         String nome_c = request.getParameter("campo");

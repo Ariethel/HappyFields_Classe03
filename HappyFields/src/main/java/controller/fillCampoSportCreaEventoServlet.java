@@ -16,7 +16,7 @@ public class fillCampoSportCreaEventoServlet extends HttpServlet {
         context.setAttribute("sport", service.doRetriveSportsName());
         CampoDAO service2 = new CampoDAO();
         context.setAttribute("campo", service2.doRetriveFieldsName());
-        response.sendRedirect("resources/view/creaEvento.jsp");
+        response.sendRedirect("resources/view/CreaEvento/CreaEvento.jsp");
         //RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/creaEvento.jsp");
         //dispatcher.forward(request, response);
     }

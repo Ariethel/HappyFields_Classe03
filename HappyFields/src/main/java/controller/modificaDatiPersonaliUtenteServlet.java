@@ -30,8 +30,8 @@ public class modificaDatiPersonaliUtenteServlet extends HttpServlet {
         if(request.getParameter("iban") != null){
             service.doChangeIban(request.getParameter("iban"), id);
         }
-        if(request.getParameter("inputGroupSelect01") != null){
-            service.doChangeSport(request.getParameter("inputGroupSelect01"), id);
+        if(request.getParameter("preferenza") != null){
+            service.doChangeSport(request.getParameter("preferenza"), id);
         }
         response.sendRedirect("resources/view/AreaUtenteGestore/AreaUtente.jsp");
     }

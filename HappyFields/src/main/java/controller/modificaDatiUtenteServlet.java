@@ -15,8 +15,8 @@ public class modificaDatiUtenteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = (String) request.getSession().getAttribute("id");
         gestioneUtenteImpl service = new gestioneUtenteImpl();
-        if(request.getParameter("email") != null){
-            service.doChangeEmail(request.getParameter("email"), id);
+        if(request.getParameter("username") != null){
+            service.doChangeEmail(request.getParameter("username"), id);
         }
         if (request.getParameter("password") != null && request.getParameter("password").equals(request.getParameter("Cpassword"))){
             service.doChangePassword(request.getParameter("password"), id);

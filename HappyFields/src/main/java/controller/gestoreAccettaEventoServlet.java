@@ -26,7 +26,8 @@ public class gestoreAccettaEventoServlet extends HttpServlet {
         persistenzaServiceImpl service2 = new persistenzaServiceImpl();
         Evento e = new Evento(nome, sport, campo, data, ora);
         service2.doAddEvento(e);
-        response.sendRedirect("home/indexGestore.jsp");
+        service2.doDropEvento(nome);
+        response.sendRedirect("home/indexGestore.html");
 
     }
 

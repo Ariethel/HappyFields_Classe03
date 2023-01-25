@@ -17,6 +17,9 @@ public class fillEventiAttesa extends HttpServlet {
         HttpSession ssn = request.getSession();
         String id = (String) ssn.getAttribute("id");
         ArrayList<Evento> eventi = service.doFetchWaitingMatch(id);
+        for (Evento evento : eventi){
+            System.out.println(evento.getNome());
+        }
         request.setAttribute("eventi", eventi);
         RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/VisualizzaEventiAttesa.jsp");
         dispatcher.forward(request, response);

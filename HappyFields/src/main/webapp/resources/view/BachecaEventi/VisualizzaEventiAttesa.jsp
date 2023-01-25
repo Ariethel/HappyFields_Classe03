@@ -22,16 +22,16 @@
         <td><c:out value="${evento.data}"/></td><br>
         <td><c:out value="${evento.ora}"/></td><br>
     </tr>
-    <br>
-    <br>
-    <br>
     <input type="hidden" name="titolo" value="${evento.nome}">
     <input type="hidden" name="campo" value="${evento.campo.getNome_c()}">
     <input type="hidden" name="sport" value="${evento.sport.getNome_s()}">
     <input type="hidden" name="data" value="${evento.data}">
     <input type="hidden" name="ora" value="${evento.ora}">
     <input type="submit" value="Accetta">
-    <input type="submit" formaction="${pageContext.request.contextPath}/gestoreRifiutaEventoServlet" value="Register">
+    <input type="submit" formaction="${pageContext.request.contextPath}/gestoreRifiutaEventoServlet" value="Rifiuta">
+    <br>
+    <br>
+    <br>
 </c:forEach>
 </form>
 

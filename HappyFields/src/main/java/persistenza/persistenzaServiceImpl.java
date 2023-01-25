@@ -34,6 +34,17 @@ public class persistenzaServiceImpl implements persistenzaService {
         }
     }
 
+    @Override
+    public void doDropEvento(String nome) {
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM attesa WHERE titolo = (?)");
+            ps.setString(1, nome);
+            ps.executeUpdate();
+        } catch (SQLException i) {
+            i.printStackTrace();
+        }
+    }
+
     public void doAddEventoAttesa(Evento e) {
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO attesa VALUES (?,?,?,?,?)");

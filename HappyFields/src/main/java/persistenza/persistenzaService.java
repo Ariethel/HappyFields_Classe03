@@ -6,4 +6,6 @@ public interface persistenzaService {
     public void doAddEvento(Evento e);
 
     public void doAddSport(String s);
+
+    public void doDropEvento(String nome);
 }

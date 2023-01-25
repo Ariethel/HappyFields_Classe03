@@ -29,4 +29,5 @@ public interface gestioneEventiService {
     ArrayList<Evento> doFetchWaitingMatch(String id);
 
 
+    Evento retriveEventoAttesaByName(String titolo);
 }

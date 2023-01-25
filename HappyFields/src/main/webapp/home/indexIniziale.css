@@ -35,6 +35,8 @@ body {
 }
 
 
+
+
 .menu{
     transition: all 1s cubic-bezier(.215, .61, .355, 1); /* anima tutte le proprietà (cubic beizer accellerazione in 4 punti dell'animazione) */
     z-index: 1;
@@ -45,6 +47,8 @@ body {
 .menu li{
     display: inline-block;
 }
+
+
 .link-menu{
     text-align: center;
     padding: 20px 60px;
@@ -53,9 +57,28 @@ body {
     margin-left: 0.1%;
     text-decoration: none;
     display: block;
+    border: none;
+}
+.link-menu-form{
+    text-align: center;
+    color: beige;
+    background-color: black;
+    margin-left: 0.1%;
+    text-decoration: none;
+    display: block;
+    border: none;
+}
+.link-menu-logout{
+    font-size: 15px;
+    padding: 20px 60px;
+    width: 100%;
+    background-color: black;
+    border: none;
+    color: beige;
+
 }
 
-.link-menu:hover{
+.link-menu:hover, .link-menu-logout:hover{
     background-color: gray;
 }
 
@@ -71,7 +94,7 @@ body {
     display: none;
 }
 
-@media (max-width: 1268px) {
+@media (max-width: 1350px) {
     .menu {
         position: relative;
         z-index: 11;
@@ -86,13 +109,33 @@ body {
     .menu li{
         display: block;
     }
-    .menu li a {
+
+    .menu li .link-menu {
         padding: 15px 30px;
         font-size: 20px;
         margin-top: 8%;
         margin-bottom: -8%;
         z-index: 20;
         background-color: black;
+    }
+    .menu li .link-menu-form {
+        font-size: 20px;
+        margin-top: 8%;
+        margin-bottom: -8%;
+        z-index: 20;
+        background-color: black;
+    }
+    .menu li a:hover{
+        background-color: gray;
+    }
+
+    .link-menu-logout{
+        padding: 15px 30px;
+        font-size: 20px;
+        width: 100%;
+        background-color: black;
+        border: none;
+        color: beige;
     }
 
     .menu--open {

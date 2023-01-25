@@ -40,8 +40,8 @@
       <form action="../ModificaDati/ModificaDatiUtente.jsp">
         <input type="submit" value="Modifica Dati" class="button">
       </form>
-      <form action="../Contatti/Contatti.jsp">
-        <input type="submit" value="Contatti" class="button">
+      <form action="${pageContext.request.contextPath}/visualizzaEventiUtenteServlet" method="get">
+        <input type="submit" value="Visualizza eventi sottoscritti" class="button">
       </form>
       <form action="../CreaEvento/CreaEvento.jsp">
         <input type="submit" value="Crea Evento" class="button">

@@ -5,6 +5,7 @@ import model.Evento;
 import model.Sport;
 import model.Utente;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public interface gestioneEventiService {
@@ -20,4 +21,12 @@ public interface gestioneEventiService {
     void doAddPlayer(String id, String nomeE);
 
     boolean isPartecipating(String id, String nomeE);
+
+    ArrayList<Evento> doFetchUserMatch(String id);
+
+    Evento retriveEventoByName(String nomeEvento);
+
+    ArrayList<Evento> doFetchWaitingMatch(String id);
+
+
 }

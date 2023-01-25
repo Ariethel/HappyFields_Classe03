@@ -112,5 +112,62 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
         return true;
     }
 
+    @Override
+    public ArrayList<Evento> doFetchUserMatch(String id) {
+        ArrayList<Evento> eventi = new ArrayList<>();
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM partecipa WHERE username = (?)");
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                eventi.add(this.retriveEventoByName(rs.getString("nomeEvento")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return eventi;
+
+    }
+
+    @Override
+    public Evento retriveEventoByName(String nomeEvento) {
+        Evento evento = new Evento();
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE titolo = (?)");
+            ps.setString(1, nomeEvento);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Sport s = this.doRetriveSport(rs.getString("sport"));
+                Campo c = this.doRetriveCampo(rs.getString("campo"));
+
+                evento.setNome(rs.getString("titolo"));
+                evento.setSport(s);
+                evento.setCampo(c);
+                evento.setData(rs.getDate("data_e"));
+                evento.setOra(rs.getDouble("ora"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return evento;
+    }
+
+    @Override
+    public ArrayList<Evento> doFetchWaitingMatch(String id) {
+        ArrayList<Evento> eventi = new ArrayList<>();
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM attesa join gestisce ON attesa.campo = gestisce.campo" +
+                    " WHERE gestisce.gestore = (?)");
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                eventi.add(this.retriveEventoByName(rs.getString("nomeEvento")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return eventi;
+    }
+
 
 }

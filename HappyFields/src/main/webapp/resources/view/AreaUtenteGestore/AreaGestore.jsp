@@ -42,8 +42,8 @@
             <form action="ModificaCampi.html">
                 <input type="submit" value="Modifica Campi" class="button">
             </form>
-            <form action="../Contatti/Contatti.jsp">
-                <input type="submit" value="Contatti" class="button">
+            <form action="${pageContext.request.contextPath}/fillEventiAttesa" method="get">
+                <input type="submit" value="Visualizza eventi in attesa" class="button">
             </form>
             <form action="../CreaEvento/CreaEvento.jsp">
                 <input type="submit" value="Crea Evento" class="button">

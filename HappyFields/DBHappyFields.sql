@@ -70,3 +70,13 @@ create table partecipa(
     primary key (username, nomeEvento)
 );
 
+create table attesa(
+	titolo varchar(255) not null,
+    sport varchar(255) references sport.nome_s,
+    #luogo calcolabile da campo
+    campo varchar(255) references campo.nome_c,
+    data_e date not null,
+    ora double not null,
+    primary key (titolo, campo)
+);
+

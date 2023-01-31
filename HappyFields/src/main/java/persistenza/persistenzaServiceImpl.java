@@ -45,6 +45,28 @@ public class persistenzaServiceImpl implements persistenzaService {
         }
     }
 
+    public void doDropUser(String nome) {
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM utente WHERE username = (?)");
+            ps.setString(1, nome);
+            ps.executeUpdate();
+        } catch (SQLException i) {
+            i.printStackTrace();
+        }
+    }
+
+    public void doDropGestore(String nome) {
+        try (Connection conn = ConnPool.getConnection()) {
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM gestore WHERE username_g = (?)");
+            ps.setString(1, nome);
+            ps.executeUpdate();
+        } catch (SQLException i) {
+            i.printStackTrace();
+        }
+    }
+
+
+
     public void doAddEventoAttesa(Evento e) {
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO attesa VALUES (?,?,?,?,?)");

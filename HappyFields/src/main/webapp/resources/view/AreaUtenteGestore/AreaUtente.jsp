@@ -46,6 +46,9 @@
       <form action="../CreaEvento/CreaEvento.jsp">
         <input type="submit" value="Crea Evento" class="button">
       </form>
+      <form action="${pageContext.request.contextPath}/eliminaAccountUtenteServlet">
+        <input type="submit" value="Elimina Account" class="button">
+      </form>
     </div>
   </div>
 </div>

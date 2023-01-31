@@ -23,11 +23,5 @@ public interface gestioneEventiService {
     boolean isPartecipating(String id, String nomeE);
 
     ArrayList<Evento> doFetchUserMatch(String id);
-
     Evento retriveEventoByName(String nomeEvento);
-
-    ArrayList<Evento> doFetchWaitingMatch(String id);
-
-
-    Evento retriveEventoAttesaByName(String titolo);
 }

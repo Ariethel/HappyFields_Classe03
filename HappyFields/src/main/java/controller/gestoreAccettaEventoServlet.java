@@ -1,6 +1,6 @@
 package controller;
 
-import gestioneEventi.gestioneEventiServiceImpl;
+import confermaEventoGestore.confermaEventoGestoreImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -17,7 +17,8 @@ import java.sql.Date;
 public class gestoreAccettaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        gestioneEventiServiceImpl service = new gestioneEventiServiceImpl();
+        confermaEventoGestoreImpl service = new confermaEventoGestoreImpl() {
+        };
         String nome = request.getParameter("titolo");
         Sport sport = service.doRetriveSport(request.getParameter("sport"));
         Campo campo = service.doRetriveCampo(request.getParameter("campo"));

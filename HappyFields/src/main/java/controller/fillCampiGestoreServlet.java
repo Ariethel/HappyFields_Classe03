@@ -1,28 +1,26 @@
 package controller;
 
 import confermaEventoGestore.confermaEventoGestoreImpl;
-import gestioneEventi.gestioneEventiServiceImpl;
+import gestioneDatiGestore.gestioneGestoreImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import model.Campo;
 import model.Evento;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "fillEventiAttesa", value = "/fillEventiAttesa")
-public class fillEventiAttesa extends HttpServlet {
+@WebServlet(name = "fillCampiGestoreServlet", value = "/fillCampiGestoreServlet")
+public class fillCampiGestoreServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        confermaEventoGestoreImpl service = new confermaEventoGestoreImpl();
+        gestioneGestoreImpl service = new gestioneGestoreImpl();
         HttpSession ssn = request.getSession();
         String id = (String) ssn.getAttribute("id");
-        ArrayList<Evento> eventi = service.doFetchWaitingMatch(id);
-        for (Evento evento : eventi){
-            System.out.println(evento.getNome());
-        }
-        request.setAttribute("eventi", eventi);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/VisualizzaEventiAttesa.jsp");
+        ArrayList<Campo> campi = service.doFetchCampiById(id);
+        request.setAttribute("campi", campi);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/ModificaDati/ModificaCampi.jsp");
         dispatcher.forward(request, response);
     }
 

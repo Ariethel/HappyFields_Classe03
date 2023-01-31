@@ -129,7 +129,6 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
 
     }
 
-    @Override
     public Evento retriveEventoByName(String nomeEvento) {
         Evento evento = new Evento();
         try(Connection conn = ConnPool.getConnection()){
@@ -151,46 +150,5 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
         }
         return evento;
     }
-
-    @Override
-    public ArrayList<Evento> doFetchWaitingMatch(String id) {
-        ArrayList<Evento> eventi = new ArrayList<>();
-        try(Connection conn = ConnPool.getConnection()){
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM attesa, gestisce WHERE attesa.campo = gestisce.campo" +
-                    " AND gestisce.gestore = (?)");
-            ps.setString(1, id);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                eventi.add(this.retriveEventoAttesaByName(rs.getString("titolo")));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return eventi;
-    }
-
-    @Override
-    public Evento retriveEventoAttesaByName(String titolo) {
-        Evento evento = new Evento();
-        try(Connection conn = ConnPool.getConnection()){
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM attesa WHERE titolo = (?)");
-            ps.setString(1, titolo);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()){
-                Sport s = this.doRetriveSport(rs.getString("sport"));
-                Campo c = this.doRetriveCampo(rs.getString("campo"));
-
-                evento.setNome(rs.getString("titolo"));
-                evento.setSport(s);
-                evento.setCampo(c);
-                evento.setData(rs.getDate("data_e"));
-                evento.setOra(rs.getDouble("ora"));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return evento;
-    }
-
 
 }

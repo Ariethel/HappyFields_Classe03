@@ -39,14 +39,14 @@
             <form action="../ModificaDati/ModificaDatiGestore.jsp">
                 <input type="submit" value="Modifica Dati" class="button">
             </form>
-            <form action="ModificaCampi.html">
+            <form action="${pageContext.request.contextPath}/fillCampiGestoreServlet">
                 <input type="submit" value="Modifica Campi" class="button">
             </form>
             <form action="${pageContext.request.contextPath}/fillEventiAttesa" method="get">
                 <input type="submit" value="Visualizza eventi in attesa" class="button">
             </form>
-            <form action="../CreaEvento/CreaEvento.jsp">
-                <input type="submit" value="Crea Evento" class="button">
+            <form action="${pageContext.request.contextPath}/eliminaAccountServlet">
+                <input type="submit" value="Elimina Account" class="button">
             </form>
         </div>
     </div>

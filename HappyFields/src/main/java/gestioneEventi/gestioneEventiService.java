@@ -7,6 +7,7 @@ import model.Utente;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Date;
 
 public interface gestioneEventiService {
     //Ci dovranno andare le funzioni per aggiungere user alla lista evento e altre cose del genere
@@ -24,4 +25,7 @@ public interface gestioneEventiService {
 
     ArrayList<Evento> doFetchUserMatch(String id);
     Evento retriveEventoByName(String nomeEvento);
+    ArrayList<Evento> doRetriveBySearch(Date date, String provincia);
+
+    public void doDropEventoUtente(String id, String nomeE);
 }

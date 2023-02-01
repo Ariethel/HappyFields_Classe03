@@ -16,7 +16,7 @@ public class addCampoServlet extends HttpServlet {
         gestioneGestoreImpl service = new gestioneGestoreImpl();
         Campo c = new Campo(request.getParameter("nome"), request.getParameter("provincia"), request.getParameter("citta"), request.getParameter("via"), Double.parseDouble(request.getParameter("costo")) , Double.parseDouble(request.getParameter("lunghezza")), Double.parseDouble(request.getParameter("larghezza")), Integer.parseInt(request.getParameter("num_giocatori")));
         service.doAddCampo(c);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/ModificaDati/ModificaDatiCampo.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/ModificaDati/ModificaCampi.jsp");
         dispatcher.forward(request, response);
     }
 

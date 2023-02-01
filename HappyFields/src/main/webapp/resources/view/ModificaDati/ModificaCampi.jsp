@@ -35,12 +35,12 @@
         <input type="hidden" name="idC"><br>
         <input type="text" name="nome" value="Nome"><br>
         <input type="text" name="provincia" value="Provincia"><br>
-        <input type="text" name="citta" value="Citta>"><br>
+        <input type="text" name="citta" value="Citta"><br>
         <input type="text" name="via" value="Via"><br>
         <input type="text" name="costo" value="Costo"><br>
         <input type="text" name="lunghezza" value="Lunghezza"><br>
         <input type="text" name="larghezza" value="Larghezza"><br>
-        <input type="number" name="num_giocatori" value="Num Giocatori"><br>
+        <input type="number" name="num_giocatori" placeholder="Num Giocatori"><br>
         <input type="submit" value="Aggiungi">
 </form>
 </body>

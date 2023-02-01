@@ -12,7 +12,13 @@
     <title>Happy Fields</title>
 </head>
 <body>
-
+<h3>Cerca evento</h3>
+<form action="${pageContext.request.contextPath}/cercaEventoServlet" method="get">
+    <input type="date" name="date">
+    <input type="text" name="provincia" placeholder="provincia">
+    <input type="submit" value="Cerca">
+</form>
+<br>
 <c:forEach var="evento" items="${eventi}">
     <form action="${pageContext.request.contextPath}/partecipaEventoServlet" method="get">
         <tr>

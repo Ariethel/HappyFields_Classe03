@@ -2,11 +2,10 @@ package gestioneEventi;
 
 import model.*;
 import gestioneEventi.gestioneEventiServiceImpl;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class gestioneEventiServiceImpl implements gestioneEventiService {
     public void doAddUserToEvent(Utente u, Evento e) {
@@ -149,6 +148,44 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
             throw new RuntimeException(e);
         }
         return evento;
+    }
+
+    @Override
+    public ArrayList<Evento> doRetriveBySearch(Date date, String provincia) {
+        ArrayList<Evento> eventi = new ArrayList<>();
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE data_e = (?) AND campo IN (SELECT nome_c FROM campo WHERE provincia = (?))");
+            ps.setDate(1, (java.sql.Date) date);
+            ps.setString(2, provincia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Evento e = new Evento();
+                Sport s = this.doRetriveSport(rs.getString("sport"));
+                Campo c = this.doRetriveCampo(rs.getString("campo"));
+
+                e.setNome(rs.getString("titolo"));
+                e.setSport(s);
+                e.setCampo(c);
+                e.setData(rs.getDate("data_e"));
+                e.setOra(rs.getDouble("ora"));
+                eventi.add(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return eventi;
+    }
+
+    @Override
+    public void doDropEventoUtente(String id, String nomeE) {
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM partecipa WHERE username = (?) AND nomeEvento = (?)");
+            ps.setString(1, id);
+            ps.setString(2, nomeE);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

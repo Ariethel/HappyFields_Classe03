@@ -17,9 +17,10 @@ public class visualizzaEventiUtenteServlet extends HttpServlet {
         HttpSession ssn = request.getSession();
         String id = (String) ssn.getAttribute("id");
         ArrayList<Evento> eventi = service.doFetchUserMatch(id);
-        request.setAttribute("eventi", eventi);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/VisualizzaEventiUtente.jsp");
-        dispatcher.forward(request, response);
+        getServletContext().setAttribute("eventi", eventi);
+        response.sendRedirect("resources/view/BachecaEventi/VisualizzaEventiUtente.jsp");
+        //RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/VisualizzaEventiUtente.jsp");
+        //dispatcher.forward(request, response);
     }
 
     @Override

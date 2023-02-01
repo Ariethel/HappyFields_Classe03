@@ -12,8 +12,8 @@
     <title>Happy Fields</title>
 </head>
 <body>
-
 <c:forEach var="evento" items="${eventi}">
+    <form action="${pageContext.request.contextPath}/eliminaEventoUtenteServlet" method="get">
         <tr>
             <td><c:out value="${evento.nome}"/></td><br>
             <td><c:out value="${evento.campo.getIndirizzoCompleto()}"/></td><br>
@@ -22,6 +22,9 @@
             <td><c:out value="${evento.data}"/></td><br>
             <td><c:out value="${evento.ora}"/></td><br>
         </tr>
+        <input type="hidden" name="nomeE" value="${evento.nome}">
+        <input type="submit" value="Elimina">
+    </form>
         <br>
         <br>
         <br>

@@ -17,9 +17,11 @@ public class fillBachecaEventiServlet extends HttpServlet {
         HttpSession ssn = request.getSession();
         String id = (String) ssn.getAttribute("id");
         eventi.removeIf(evento -> service.isPartecipating(id, evento.getNome()));
-        request.setAttribute("eventi", eventi);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/BachecaEventi.jsp");
-        dispatcher.forward(request, response);
+        ServletContext context = getServletContext();
+        context.setAttribute("eventi", eventi);
+        response.sendRedirect("resources/view/BachecaEventi/BachecaEventi.jsp");
+        /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/BachecaEventi.jsp");
+        dispatcher.forward(request, response);*/
     }
 
     @Override

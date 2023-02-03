@@ -1,5 +1,5 @@
 body{
-    background-color: beige;
+    background-color: green !important;
 }
 
 .form-cerca{
@@ -20,7 +20,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    background-color: black;
+    background-color: white;
 }
 
 

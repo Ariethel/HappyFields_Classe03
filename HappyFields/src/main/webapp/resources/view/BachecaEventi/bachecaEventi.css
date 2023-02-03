@@ -1,34 +1,88 @@
-body{
-    background-color: green !important;
+body {
+    background-color: #2a5324;
+}
+
+.logoimg{
+    margin-left: 0;
+    width: 200px;
+    height: auto;
+}
+
+.titolo-grande{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 1%;
 }
 
 .form-cerca{
+    width: 70%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    padding: 20px;
-    background-color: beige;
-    border: 2px solid black;
+    padding: 30px;
+    background-color: green;
+    border: 5px solid black;
+    opacity: 0.8;
 }
 
 .titolo{
     margin-left: auto;
     margin-right: auto;
-    font-size: 15px;
+    font-size: 20px;
+}
+.button-piccolo{
+    text-decoration: none;
+    position: relative;
+    padding: 7px 25px;
+    color: black;
+    background-color: beige;
+    z-index: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button-piccolo:hover{
+    background-color: gray;
 }
 
 .form-eventi{
+    width: 70%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: -2%;
     padding: 30px;
-    background-color: white;
+    background-color: beige;
+    border: 5px solid black;
+    opacity: 0.8;
+}
+
+
+.tab-eventi{
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 
+.button {
+    text-decoration: none;
+    position: relative;
+    padding: 20px 60px;
+    color: black;
+    background-color: beige;
+    z-index: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-
-
-
+.button:hover{
+    background-color: gray;
+}
 
 
 
@@ -38,8 +92,8 @@ body{
     background-color: black;
     padding-top: 50px;
     text-align: center;
-    width: 200%;
-    margin-left: -40%;
+    width: 100%;
+    margin-top: 2%;
     margin-bottom: 0;
     opacity: 0.8;
 }
@@ -57,7 +111,7 @@ body{
 }
 
 
-.col h3{
+.col h4{
     width: 100%;
 
 }

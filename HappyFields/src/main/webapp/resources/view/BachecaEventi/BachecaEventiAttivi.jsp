@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bacheca Eventi</title>
-  <link rel="stylesheet" href="bachecaEventi.css" type="text/css">
+  <link rel="stylesheet" href="./bachecaEventi.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.min.css" integrity="sha512-ztsAq/T5Mif7onFaDEa5wsi2yyDn5ygdVwSSQ4iok5BPJQGYz1CoXWZSA7OgwGWrxrSrbF0K85PD5uLpimu4eQ==" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" />
 
@@ -28,35 +28,35 @@
 
 </head>
 <body>
+<a class="logo" href="${pageContext.request.contextPath}home/index.html">
+  <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
+</a>
 
+<h1 class="titolo-grande">Ecco per te tutti gli eventi attivi!</h1>
 <form class="form-cerca" action="${pageContext.request.contextPath}/cercaEventoServlet" method="get">
   <h3 class="titolo">Cerca evento</h3>
   <input class="in" type="date" name="date">
   <input class="in" type="text" name="provincia" placeholder="provincia">
-  <input class="button" type="submit" value="Cerca">
+  <input class="button-piccolo" type="submit" value="Cerca">
 </form>
 <br>
 <c:forEach var="evento" items="${eventi}">
   <form class="form-eventi" action="${pageContext.request.contextPath}/partecipaEventoServlet" method="get">
-    <tr>
-      <td><c:out value="${evento.nome}"/></td><br>
-      <td><c:out value="${evento.campo.getIndirizzoCompleto()}"/></td><br>
-      <td><c:out value="${evento.sport.getNome_s()}"/></td><br>
-      <td><c:out value="${evento.campo.getNome_c()}"/></td><br>
-      <td><c:out value="${evento.data}"/></td><br>
-      <td><c:out value="${evento.ora}"/></td><br>
+    <tr class="tab-eventi">
+      <td class="td-eventi"><c:out value="titolo: ${evento.nome}"/></td><br>
+      <td class="td-eventi"><c:out value="indirizzo: ${evento.campo.getIndirizzoCompleto()}"/></td><br>
+      <td class="td-eventi"> <c:out value="sport: ${evento.sport.getNome_s()}"/></td><br>
+      <td class="td-eventi"><c:out value="campo: ${evento.campo.getNome_c()}"/></td><br>
+      <td class="td-eventi"><c:out value="giorno: ${evento.data}"/></td><br>
+      <td class="td-eventi"><c:out value="orario: ${evento.ora}"/></td><br>
     </tr>
     <input type="hidden" name="nome_e" value="${evento.getNome()}">
-    <input type=submit value="Partecipa">
+    <input class="button" type=submit value="Partecipa">
     <br>
     <br>
     <br>
   </form>
 </c:forEach>
-
-</body>
-
-
 <!-- Footer -->
 <footer class="footer">
   <div class="grid">
@@ -111,4 +111,5 @@
 
 </script>
 
+</body>
 </html>

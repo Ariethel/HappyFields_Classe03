@@ -19,8 +19,8 @@ public class fillBachecaEventiServlet extends HttpServlet {
         eventi.removeIf(evento -> service.isPartecipating(id, evento.getNome()));
         ServletContext context = getServletContext();
         context.setAttribute("eventi", eventi);
-        response.sendRedirect("resources/view/BachecaEventi/BachecaEventi.jsp");
-        /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/BachecaEventi.jsp");
+        response.sendRedirect("resources/view/BachecaEventi/BachecaEventiAttivi.jsp");
+        /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/BachecaEventiAttivi.jsp");
         dispatcher.forward(request, response);*/
     }
 

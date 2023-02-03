@@ -1,0 +1,57 @@
+body{
+    background-color: #2a5324;
+}
+
+.logoimg{
+    margin-left: 0;
+    width: 200px;
+    height: auto;
+}
+
+.titolo-grande{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 1%;
+}
+
+.form-eventi{
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2%;
+    padding: 30px;
+    background-color: beige;
+    border: 5px solid black;
+    opacity: 0.8;
+}
+
+
+.tab-eventi{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.button {
+    text-decoration: none;
+    position: relative;
+    padding: 20px 60px;
+    color: black;
+    background-color: beige;
+    z-index: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button:hover{
+    background-color: gray;
+}
+
+
+

@@ -1,12 +1,13 @@
 body{
-    background-color: #2a5324;
+    background-color: beige;
 }
 
 .form-cerca{
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-    background-color: black;
+    background-color: beige;
+    border: 2px solid black;
 }
 
 .titolo{

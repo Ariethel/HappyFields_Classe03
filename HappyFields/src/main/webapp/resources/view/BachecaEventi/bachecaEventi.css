@@ -1,0 +1,67 @@
+body{
+    background-color: #2a5324;
+}
+
+.form-cerca{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    background-color: black;
+}
+
+.titolo{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+}
+
+.form-eventi{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 200%;
+    margin-left: -40%;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px; margin-left: 0;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h3{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}

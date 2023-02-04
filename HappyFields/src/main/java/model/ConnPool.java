@@ -16,8 +16,8 @@ public class ConnPool {
             PoolProperties p = new PoolProperties();
             p.setUrl("jdbc:mysql://localhost:3306/HappyFields?serverTimezone=" + TimeZone.getDefault().getID());
             p.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            p.setUsername("root"); //le credenziali dovete cambiarle ogni volta che lavorate in locale, queste sono le mie
-            p.setPassword("carlo2001");
+            p.setUsername("admin"); //le credenziali dovete cambiarle ogni volta che lavorate in locale, queste sono le mie
+            p.setPassword("root");
             p.setMaxActive(100);
             p.setInitialSize(10);
             p.setMinIdle(10);

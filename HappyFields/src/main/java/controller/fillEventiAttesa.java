@@ -21,9 +21,11 @@ public class fillEventiAttesa extends HttpServlet {
         for (Evento evento : eventi){
             System.out.println(evento.getNome());
         }
-        request.setAttribute("eventi", eventi);
+        getServletContext().setAttribute("eventi", eventi);
+        response.sendRedirect("resources/view/BachecaEventi/VisualizzaEventiAttesa.jsp");
+        /*request.setAttribute("eventi", eventi);
         RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/VisualizzaEventiAttesa.jsp");
-        dispatcher.forward(request, response);
+        dispatcher.forward(request, response);*/
     }
 
     @Override

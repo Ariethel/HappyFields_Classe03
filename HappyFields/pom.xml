@@ -69,29 +69,38 @@
             <version>20220924</version>
         </dependency>
 
-        <!-- Per qualche motivo se lascio queste due dipendenze su uno dei miei computer non funziona, da decommentare se non funziona agli altri -->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl &ndash;&gt;
+        <!--&lt;!&ndash; Per qualche motivo se lascio queste due dipendenze su uno dei miei computer non funziona, da decommentare se non funziona agli altri &ndash;&gt;
+        &lt;!&ndash;&lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl &ndash;&gt; &ndash;&gt;
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-        &lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api &ndash;&gt;
+        &lt;!&ndash; &lt;!&ndash; https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api &ndash;&gt; &ndash;&gt;
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>-->
+        <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>2.0.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
         <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

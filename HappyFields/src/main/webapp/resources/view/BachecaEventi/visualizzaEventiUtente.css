@@ -8,68 +8,17 @@ body {
     height: auto;
 }
 
-.titolo-grande{
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 1%;
-}
-
-.form-cerca{
-    width: 70%;
+.form-elimina{
+    width: 60%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    background-color: yellow;
+    background-color: #2a5324;
+    color: beige;
     border: 5px solid black;
     opacity: 0.8;
 }
-
-.titolo{
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 20px;
-}
-.button-piccolo{
-    text-decoration: none;
-    position: relative;
-    padding: 7px 25px;
-    color: black;
-    background-color: beige;
-    z-index: 0;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.button-piccolo:hover{
-    background-color: gray;
-}
-
-
-.form-eventi{
-    width: 70%;
-    height: auto;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    /*margin-top: -2%;*/
-    padding: 30px;
-    background-color: beige;
-    border: 5px solid black;
-    opacity: 0.8;
-}
-
-
-.tab-eventi{
-    width: 100%;
-    height: 100%;
-    background-color: beige;
-}
-
 
 
 .button {

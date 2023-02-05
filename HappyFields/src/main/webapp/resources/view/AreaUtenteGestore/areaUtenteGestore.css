@@ -46,6 +46,9 @@ body{
     text-align: center;
     margin: 10% auto;
 }
+.button:hover{
+    background-color: sandybrown;
+}
 
 @media (max-width: 768px) {
     .titolo{

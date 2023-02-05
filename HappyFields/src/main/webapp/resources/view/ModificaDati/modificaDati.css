@@ -35,7 +35,7 @@ body{
 
 .input-group{
     width: 100%;
-    background-color: #2a5324;
+    /*background-color: #2a5324;*/
 }
 
 .input-group-text{
@@ -52,6 +52,9 @@ body{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+.button:hover{
+    background-color: navajowhite;
 }
 
 @media (max-width: 968px){

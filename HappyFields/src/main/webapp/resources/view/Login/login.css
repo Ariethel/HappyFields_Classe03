@@ -49,6 +49,9 @@ body{
     text-align: center;
     margin-left: 36%;
 }
+.button:hover{
+    background-color: navajowhite;
+}
 
 @media (max-width: 968px){
     body{

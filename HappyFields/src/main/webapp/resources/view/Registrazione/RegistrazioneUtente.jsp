@@ -73,7 +73,7 @@
     </div>
     <div class="input-group mb-3">
       <label class="input-group-text">Pref. Sport</label>
-      <select name="preferenza">
+      <select class="form-control" name="preferenza">
         <c:forEach items="${sport}" var="s">
           <option>${s}</option>
         </c:forEach>

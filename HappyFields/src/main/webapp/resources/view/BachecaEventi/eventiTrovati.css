@@ -14,7 +14,8 @@ body{
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    margin-top: 1%;
+    margin-top: 8%;
+    color: black;
 }
 
 .form-eventi{
@@ -52,6 +53,42 @@ body{
 .button:hover{
     background-color: gray;
 }
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px; margin-left: 0;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h4{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
 
 
 

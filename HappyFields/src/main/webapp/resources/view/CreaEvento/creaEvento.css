@@ -52,6 +52,11 @@ body{
     margin-right: auto;
     margin-top: 4%;
 }
+
+.button:hover{
+    background-color: sandybrown;
+}
+
 @media (max-width: 768px){
     body{
         margin-left: 0%;

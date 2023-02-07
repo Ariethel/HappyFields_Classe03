@@ -154,9 +154,33 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
     public ArrayList<Evento> doRetriveBySearch(Date date, String provincia) {
         ArrayList<Evento> eventi = new ArrayList<>();
         try(Connection conn = ConnPool.getConnection()){
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE data_e = (?) AND campo IN (SELECT nome_c FROM campo WHERE provincia = (?))");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE campo IN (SELECT nome_c FROM campo WHERE provincia = (?)) AND data_e = (?)");
             ps.setDate(1, (java.sql.Date) date);
             ps.setString(2, provincia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                Evento e = new Evento();
+                Sport s = this.doRetriveSport(rs.getString("sport"));
+                Campo c = this.doRetriveCampo(rs.getString("campo"));
+
+                e.setNome(rs.getString("titolo"));
+                e.setSport(s);
+                e.setCampo(c);
+                e.setData(rs.getDate("data_e"));
+                e.setOra(rs.getDouble("ora"));
+                eventi.add(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return eventi;
+    }
+
+    public ArrayList<Evento> doRetriveBySearch(String provincia) {
+        ArrayList<Evento> eventi = new ArrayList<>();
+        try(Connection conn = ConnPool.getConnection()){
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE campo IN (SELECT nome_c FROM campo WHERE provincia = (?))");
+            ps.setString(1, provincia);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Evento e = new Evento();

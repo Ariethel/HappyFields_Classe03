@@ -12,11 +12,19 @@ import java.sql.Date;
 public class cercaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Date data = Date.valueOf(request.getParameter("date"));
+        Date data = null;
+        try {
+            data = Date.valueOf(request.getParameter("date"));
+        }catch (IllegalArgumentException e) {
+            data = null;
+        }
         String provincia = request.getParameter("provincia");
         gestioneEventiServiceImpl service = new gestioneEventiServiceImpl();
         ServletContext context = getServletContext();
-        context.setAttribute("eventi", service.doRetriveBySearch(data, provincia));
+        if (data == null)
+            context.setAttribute("eventi", service.doRetriveBySearch(provincia));
+        else
+            context.setAttribute("eventi", service.doRetriveBySearch(data, provincia));
         response.sendRedirect("resources/view/BachecaEventi/EventiTrovati.jsp");
         /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/EventiTrovati.jsp");
         dispatcher.forward(request, response);*/

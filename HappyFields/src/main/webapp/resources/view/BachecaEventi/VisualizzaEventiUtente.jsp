@@ -28,10 +28,10 @@
 </head>
 <body>
 
-<a class="logo" href="${pageContext.request.contextPath}home/index.html">
+<a class="logo" href="${pageContext.request.contextPath}/home/indexUtente.html">
     <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
 </a>
-
+<h1 class="titolo-grande">Eventi sottoscritti</h1>
 <c:forEach var="evento" items="${eventi}">
     <form class="form-elimina zoom" action="${pageContext.request.contextPath}/eliminaEventoUtenteServlet" method="get">
         <tr class="tab-elimina">
@@ -45,9 +45,6 @@
         <input type="hidden" name="nomeE" value="${evento.nome}">
         <input class="button" type="submit" value="Elimina">
     </form>
-        <br>
-        <br>
-        <br>
 </c:forEach>
 
 <!-- Footer -->

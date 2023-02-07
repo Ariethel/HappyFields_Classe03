@@ -28,7 +28,7 @@
 
 </head>
 <body>
-<a class="logo" href="${pageContext.request.contextPath}home/index.html">
+<a class="logo" href="${pageContext.request.contextPath}/home/indexUtente.html">
   <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
 </a>
 
@@ -43,12 +43,12 @@
 <c:forEach var="evento" items="${eventi}">
   <form class="form-eventi" action="${pageContext.request.contextPath}/partecipaEventoServlet" method="get">
     <tr class="tab-eventi">
-      <td class="td-eventi"><c:out value="titolo: ${evento.nome}"/></td><br>
-      <td class="td-eventi"><c:out value="indirizzo: ${evento.campo.getIndirizzoCompleto()}"/></td><br>
-      <td class="td-eventi"> <c:out value="sport: ${evento.sport.getNome_s()}"/></td><br>
-      <td class="td-eventi"><c:out value="campo: ${evento.campo.getNome_c()}"/></td><br>
-      <td class="td-eventi"><c:out value="giorno: ${evento.data}"/></td><br>
-      <td class="td-eventi"><c:out value="orario: ${evento.ora}"/></td><br>
+      <td class="td-eventi"><c:out value="titolo: ${evento.nome}"/></td><br><br>
+      <td class="td-eventi"><c:out value="indirizzo: ${evento.campo.getIndirizzoCompleto()}"/></td><br><br>
+      <td class="td-eventi"> <c:out value="sport: ${evento.sport.getNome_s()}"/></td><br><br>
+      <td class="td-eventi"><c:out value="campo: ${evento.campo.getNome_c()}"/></td><br><br>
+      <td class="td-eventi"><c:out value="giorno: ${evento.data}"/></td><br><br>
+      <td class="td-eventi"><c:out value="orario: ${evento.ora}"/></td><br><br>
     </tr>
     <input type="hidden" name="nome_e" value="${evento.getNome()}">
     <input class="button" type=submit value="Partecipa">

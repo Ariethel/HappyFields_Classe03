@@ -29,7 +29,7 @@
 
 <body>
 
-<a class="logo" href="${pageContext.request.contextPath}index.html" methods="get">
+<a class="logo" href="${pageContext.request.contextPath}/home/indexGestore.html" methods="get">
   <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
 </a>
 

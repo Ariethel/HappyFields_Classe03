@@ -1,5 +1,6 @@
 body {
-    background-image: url("sfondocampo10.JPG");
+    background-image: url("sfondo-bacheca.jpeg");
+    background-size: cover;
 }
 
 .logoimg{
@@ -23,7 +24,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    background-color: yellow;
+    background-color: beige;
     border: 5px solid black;
     opacity: 0.8;
 }
@@ -31,6 +32,7 @@ body {
 .titolo{
     margin-left: auto;
     margin-right: auto;
+    color: black;
     font-size: 20px;
 }
 .button-piccolo{

@@ -1,5 +1,5 @@
 body {
-    background-image: url("sfondocampo10.JPG");
+    background-image: url("sfondo-bacheca.jpeg");
 }
 
 .logoimg{
@@ -8,14 +8,23 @@ body {
     height: auto;
 }
 
+.titolo-grande{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 1%;
+}
+
 .form-elimina{
     width: 60%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    background-color: #2a5324;
-    color: beige;
+    background-color: beige;
+    color: black;
     border: 5px solid black;
     opacity: 0.8;
 }

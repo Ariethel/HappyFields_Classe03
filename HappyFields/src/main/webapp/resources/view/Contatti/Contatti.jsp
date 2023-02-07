@@ -28,7 +28,7 @@
 <div class="img">
   <!-- Logo -->
   <div class="logodiv zoom">
-    <a class="logo" href="${pageContext.request.contextPath}home/index.html">
+    <a class="logo" href="${pageContext.request.contextPath}/home/index.html">
       <img src="${pageContext.request.contextPath}/home/LOGO.jpg" alt="" class="logoimg">
     </a>
   </div>

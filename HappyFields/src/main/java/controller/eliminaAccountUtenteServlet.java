@@ -3,6 +3,7 @@ package controller;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import persistenza.persistenzaService;
 import persistenza.persistenzaServiceImpl;
 
 import java.io.IOException;
@@ -12,7 +13,7 @@ public class eliminaAccountUtenteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession ssn = request.getSession();
-        persistenzaServiceImpl service = new persistenzaServiceImpl();
+        persistenzaService service = new persistenzaServiceImpl();
         service.doDropUser((String) ssn.getAttribute("id"));
         response.sendRedirect("home/index.html");
     }

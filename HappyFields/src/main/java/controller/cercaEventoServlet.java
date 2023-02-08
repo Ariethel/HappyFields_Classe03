@@ -1,5 +1,6 @@
 package controller;
 
+import gestioneEventi.gestioneEventiService;
 import gestioneEventi.gestioneEventiServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -19,7 +20,7 @@ public class cercaEventoServlet extends HttpServlet {
             data = null;
         }
         String provincia = request.getParameter("provincia");
-        gestioneEventiServiceImpl service = new gestioneEventiServiceImpl();
+        gestioneEventiService service = new gestioneEventiServiceImpl();
         ServletContext context = getServletContext();
         if (data == null)
             context.setAttribute("eventi", service.doRetriveBySearch(provincia));

@@ -4,6 +4,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.*;
+import persistenza.persistenzaService;
 import persistenza.persistenzaServiceImpl;
 
 import javax.xml.crypto.Data;
@@ -22,7 +23,7 @@ public class creaEventoServlet extends HttpServlet {
         Date data = Date.valueOf(request.getParameter("data"));
         //Ormai solo dio sa come funziona questa conversione da tempo a double
         double ora = Double.parseDouble((request.getParameter("ora")).replaceAll(":", "."));
-        persistenzaServiceImpl service2 = new persistenzaServiceImpl();
+        persistenzaService service2 = new persistenzaServiceImpl();
         Evento e = new Evento(nome, sport, campo, data, ora);
         service2.doAddEventoAttesa(e);
         response.sendRedirect("resources/view/eventoCreatoCorrettamente.jsp");

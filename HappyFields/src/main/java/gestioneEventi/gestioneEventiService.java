@@ -27,5 +27,6 @@ public interface gestioneEventiService {
     Evento retriveEventoByName(String nomeEvento);
     ArrayList<Evento> doRetriveBySearch(Date date, String provincia);
 
+    ArrayList<Evento> doRetriveBySearch(String provincia);
     public void doDropEventoUtente(String id, String nomeE);
 }

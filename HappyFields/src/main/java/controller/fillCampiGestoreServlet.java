@@ -2,6 +2,7 @@ package controller;
 
 import confermaEventoGestore.confermaEventoGestoreImpl;
 import gestioneDatiGestore.gestioneGestoreImpl;
+import gestioneDatiGestore.gestioneGestoreService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 public class fillCampiGestoreServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        gestioneGestoreImpl service = new gestioneGestoreImpl();
+        gestioneGestoreService service = new gestioneGestoreImpl();
         HttpSession ssn = request.getSession();
         String id = (String) ssn.getAttribute("id");
         ArrayList<Campo> campi = service.doFetchCampiById(id);

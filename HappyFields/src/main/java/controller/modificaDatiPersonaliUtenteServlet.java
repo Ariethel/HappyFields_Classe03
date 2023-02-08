@@ -3,6 +3,7 @@ package controller;
 import gestioneDatiGestore.gestioneGestoreImpl;
 import gestioneDatiGestore.gestioneGestoreService;
 import gestioneDatiUtente.gestioneUtenteImpl;
+import gestioneDatiUtente.gestioneUtenteService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -14,7 +15,7 @@ public class modificaDatiPersonaliUtenteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = (String) request.getSession().getAttribute("id");
-        gestioneUtenteImpl service = new gestioneUtenteImpl();
+        gestioneUtenteService service = new gestioneUtenteImpl();
         if(request.getParameter("provincia") != null){
             service.doChangeProvincia(request.getParameter("provincia"), id);
         }

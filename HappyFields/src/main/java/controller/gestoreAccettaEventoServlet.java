@@ -8,7 +8,7 @@ import model.Campo;
 import model.Evento;
 import model.Sport;
 import persistenza.persistenzaServiceImpl;
-
+import confermaEventoGestore.*;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.sql.Date;
@@ -17,7 +17,7 @@ import java.sql.Date;
 public class gestoreAccettaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        confermaEventoGestoreImpl service = new confermaEventoGestoreImpl() {
+        confermaEventoGestore service = new confermaEventoGestoreImpl() {
         };
         String nome = request.getParameter("titolo");
         Sport sport = service.doRetriveSport(request.getParameter("sport"));

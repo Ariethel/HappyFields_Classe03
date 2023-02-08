@@ -1,10 +1,12 @@
 package controller;
 
+import autenticazione.autenticazioneService;
 import autenticazione.autenticazioneServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Utente;
+import registrazione.registrazioneService;
 import registrazione.registrazioneServiceImpl;
 
 import java.io.IOException;
@@ -18,8 +20,8 @@ public class registerUtenteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        autenticazioneServiceImpl service = new autenticazioneServiceImpl();
-        registrazioneServiceImpl serviceRegister = new registrazioneServiceImpl();
+        autenticazioneService service = new autenticazioneServiceImpl();
+        registrazioneService serviceRegister = new registrazioneServiceImpl();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String provincia = request.getParameter("provincia");

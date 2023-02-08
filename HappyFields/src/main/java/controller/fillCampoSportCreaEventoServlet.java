@@ -1,5 +1,6 @@
 package controller;
 
+import gestioneEventi.gestioneEventiService;
 import gestioneEventi.gestioneEventiServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -12,7 +13,7 @@ public class fillCampoSportCreaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = getServletContext();
-        gestioneEventiServiceImpl service = new gestioneEventiServiceImpl();
+        gestioneEventiService service = new gestioneEventiServiceImpl();
         context.setAttribute("sport", service.doRetriveSportsName());
         CampoDAO service2 = new CampoDAO();
         context.setAttribute("campo", service2.doRetriveFieldsName());

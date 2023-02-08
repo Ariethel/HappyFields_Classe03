@@ -6,7 +6,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Evento;
-
+import confermaEventoGestore.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class fillEventiAttesa extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        confermaEventoGestoreImpl service = new confermaEventoGestoreImpl();
+        confermaEventoGestore service = new confermaEventoGestoreImpl();
         HttpSession ssn = request.getSession();
         String id = (String) ssn.getAttribute("id");
         ArrayList<Evento> eventi = service.doFetchWaitingMatch(id);

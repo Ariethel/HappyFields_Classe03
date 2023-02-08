@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.*;
 import model.Campo;
 import model.Evento;
 import model.Sport;
+import persistenza.persistenzaService;
 import persistenza.persistenzaServiceImpl;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class gestoreRifiutaEventoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("titolo");
-        persistenzaServiceImpl service2 = new persistenzaServiceImpl();
+        persistenzaService service2 = new persistenzaServiceImpl();
         service2.doDropEvento(nome);
         response.sendRedirect("home/indexGestore.html");
     }

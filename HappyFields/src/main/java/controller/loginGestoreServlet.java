@@ -1,5 +1,6 @@
 package controller;
 
+import autenticazione.autenticazioneService;
 import autenticazione.autenticazioneServiceImpl;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -17,7 +18,7 @@ public class loginGestoreServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        autenticazioneServiceImpl service = new autenticazioneServiceImpl();
+        autenticazioneService service = new autenticazioneServiceImpl();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         HttpSession ssn = null;

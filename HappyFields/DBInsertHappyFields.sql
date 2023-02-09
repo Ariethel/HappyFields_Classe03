@@ -19,7 +19,7 @@ insert into gestore values
 ('carlo97','carlo','tammarro', 'sonosolare', 'SA', 'mercato san severino', 'curcumvallazione', 'IT97T0066789876543668890022',3667895543),
 ('giulio99','giulio','incoronato', 'studiostudio', 'NA', 'piazzolla', 'antonio ciccone', 'IT99G6699009988776543780976', 3289876654),
 ('antonio66','antonio','scognamiglio', 'ooiiuuyytt', 'AV', 'aversa', 'antonio ciccone', 'IT96Q2266789876543668890022', 3289095543),
-('marioM', 'mario', 'marrone', 'uiuiuiui', 'NA', 'poimigliano d\'arco', 'via delle carote', 'IT96Q1111112255543668890022', 3278906654),
+('marioM', 'mario', 'marrone', 'uiuiuiui', 'NA', 'poimigliano d arco', 'via delle carote', 'IT96Q1111112255543668890022', 3278906654),
 ('ernestoT', 'ernesto', 'tafuro', 'uiooooui', 'SA', 'nocera inferiore', 'via giuseppe mazzini', 'IT96Q1199885655543042890022', 3098201654),
 ('ernesto00', 'ernesto', 'castaldo', 'ooooui', 'SA', 'baronissi', 'via degli ulivi' ,'IT96Q1199885655830570943722', 3087689054);
 
@@ -33,7 +33,7 @@ insert into sport values
 
 insert into evento values
 ('partitina', 'calcio', 'pollicino', '2023-02-19', 18.00),
-('partita.tennis', 'tennis', 'palla d\'oro', '2023-03-18', 15.00),
+('partita.tennis', 'tennis', 'palla d oro', '2023-03-18', 15.00),
 ('giochiamoInsieme', 'pallavolo', 'bombonera', '2023-03-20', 15.00),
 ('amanti del basket', 'basket', 'campetti nike','2023-04-21',17.30),
 ('calciando', 'calcetto', 'real football', '023-03-22', 18.55),
@@ -66,5 +66,7 @@ insert into gestisce values
 ('marioM', 'sporting club'),
 ('ernesto00','blue paddle club'),
 ('ernestoT','palla d\oro');
+
+
 
 

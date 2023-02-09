@@ -29,7 +29,7 @@ public class loginUtenteServlet extends HttpServlet {
             }
             response.sendRedirect("home/indexUtente.html");
         }else{
-            response.sendRedirect("resources/view/badCredentials.jsp");
+            response.sendRedirect("resources/view/Login/ErroreLogin.html");
         }
 
 

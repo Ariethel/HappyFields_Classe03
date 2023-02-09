@@ -34,7 +34,7 @@ public class registerUtenteServlet extends HttpServlet {
         if (!service.doCheckUsernameAlredyUsed(u)){
             serviceRegister.doAddUser(u);
             response.sendRedirect("home/indexUtente.html");
-        } else response.sendRedirect("resources/view/usernameAlredyInUse.jsp");
+        } else response.sendRedirect("resources/view/Registrazione/ErroreRegistrazione.html");
 
     }
 }

@@ -36,7 +36,7 @@ public class registerGestoreServlet extends HttpServlet {
         if (!service.doCheckUsernameManagerAlredyUsed(g)){
             serviceRegister.doAddManager(g);
             response.sendRedirect("home/indexGestore.html");
-        } else response.sendRedirect("resources/view/usernameAlredyInUse.jsp");
+        } else response.sendRedirect("resources/view/Registrazione/ErroreRegistrazione.html");
 
     }
 }

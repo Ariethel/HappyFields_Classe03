@@ -1,0 +1,94 @@
+body {
+    background-image: url("sfondo-bacheca.jpeg");
+    background-size: cover;
+}
+
+.logoimg{
+    margin-left: 0;
+    width: 200px;
+    height: auto;
+}
+
+.titolo-grande{
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 1%;
+}
+.form-eventiR{
+    width: 70%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: -2%;*/
+    padding: 30px;
+    background-color: beige;
+    border: 5px solid black;
+    opacity: 0.8;
+}
+
+.tab-eventiR{
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}
+
+.button {
+    text-decoration: none;
+    position: relative;
+    padding: 20px 60px;
+    color: black;
+    background-color: beige;
+    z-index: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button:hover{
+    background-color: gray;
+}
+
+
+
+
+
+
+
+
+/* Footer */
+.footer{
+    background-color: black;
+    padding-top: 50px;
+    text-align: center;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px){
+    .footer{width: 100%; font-size: 10px; margin-left: 0;}
+    .col h4{font-size: 15px; padding: 0 5px; text-align: center;}
+
+}
+
+.grid{
+    display: flex;
+    padding: 50px 30px;
+    color: white;
+}
+
+
+.col h4{
+    width: 100%;
+
+}
+
+.col{
+    width: 100%;
+    padding-bottom: 50px;
+}

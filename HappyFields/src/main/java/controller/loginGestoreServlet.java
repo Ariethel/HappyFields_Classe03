@@ -31,7 +31,7 @@ public class loginGestoreServlet extends HttpServlet {
             }
             response.sendRedirect("home/indexGestore.html");
         }else{
-            response.sendRedirect("resources/view/badCredentials.jsp");
+            response.sendRedirect("resources/view/Login/ErroreLogin.html");
         }
     }
 }

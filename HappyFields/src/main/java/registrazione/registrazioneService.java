@@ -6,8 +6,8 @@ import model.Utente;
 public interface registrazioneService {
 
     // Utente
-    public void doAddUser(Utente utente);
+    public boolean doAddUser(Utente utente);
 
     // Gestore
-    public void doAddManager(Gestore gestore);
+    public boolean doAddManager(Gestore gestore);
 }

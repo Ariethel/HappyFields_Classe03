@@ -14,18 +14,19 @@ public class registrazioneServiceImpl implements registrazioneService {
 
 
     public boolean doAddUser(Utente utente) {
-        Pattern pattern = Pattern.compile("^[A-z0-9.#& ]{1,30}$"); // Regex per username
+        Pattern pattern = Pattern.compile("^[A-z0-9.#&]{1,30}$"); // Regex per username
         if (!pattern.matcher(utente.getUsername()).matches()) return false;
-        Pattern patternC = Pattern.compile("^[A-z]{1}$"); // Regex per citta
-        if (!pattern.matcher(utente.getCitta()).matches()) return false;
+        Pattern patternC = Pattern.compile("^[A-z]$"); // Regex per citta
+        if (!patternC.matcher(utente.getCitta()).matches()) return false;
         Pattern patternP = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
-        if (!pattern.matcher(utente.getProvincia()).matches()) return false;
-        Pattern patternV = Pattern.compile("^[A-z]{1,30}$"); // Regex per via
-        if (!pattern.matcher(utente.getVia()).matches()) return false;
+        if (!patternP.matcher(utente.getProvincia()).matches()) return false;
+        Pattern patternV = Pattern.compile("^[A-z 0-9]{1,30}$"); // Regex per via
+        if (!patternV.matcher(utente.getVia()).matches()) return false;
         Pattern patternN = Pattern.compile("^[0-9]{10,10}$"); // Regex per numero di telefono
-        if (!pattern.matcher(String.valueOf(utente.getTelefono())).matches()) return false;
-        Pattern passwordP = Pattern.compile("(?=^.{8,}$)((?=.\\d)|(?=.\\W+))(?![.\\n])(?=.[AZ])(?=.[az]).*$\""); // Regex per password
-        if (!passwordP.matcher(utente.getPassword()).matches()) return false;
+        if (!patternN.matcher(String.valueOf(utente.getTelefono())).matches()) return false;
+        Pattern patternPass = Pattern.compile("^(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,15}$"); // Regex per password
+        if (!patternPass.matcher(utente.getPassword()).matches()) return false;
+
 
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO utente VALUES (?,?,?,?,?,?,?,?)");

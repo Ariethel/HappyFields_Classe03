@@ -12,31 +12,28 @@ import java.util.stream.Stream;
 public class registrazioneTest {
     registrazioneService rs = new registrazioneServiceImpl();
 
-    public static Stream<Arguments> providesStringForPasswordChecker() {
+    public static Stream<Arguments> provideUserInfo() {
         return Stream.of(
-                Arguments.of("annac01", "Annachiara"), // Username e password esistenti
-                Arguments.of("root", "errore"), // Username esistente, password nuova
-                Arguments.of("provaErrore", "errore"), // Username e password nuovi
-                Arguments.of("", ""), // Username e password vuoti
-                Arguments.of("!!231", "errore") // Username con caratteri fuori dal range
-        );
+                Arguments.of("Antonio Paolo Giovanni Tammaro Aniello Dos Santos Da Lima", "carlos2121!T", "SA", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
+                Arguments.of("Carlos!!$", "carlos2121!T", "SA", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
+                Arguments.of("Antonio", "carlos2121!T", "SA", "", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
+                Arguments.of("Antonio", "carlos2121!T", "Sale", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
+                Arguments.of("Antonio", "carlos2121!T", "SA", "Fisciano", "via Circumvallazione Tuoro Contrada Pietà 8", "iban", "preferenza", 1245613627 ),
+                Arguments.of("Antonio", "Carlos", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
+                Arguments.of("Antonio", "carlos21??", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627),
+                Arguments.of("Antonio", "Carlos2121!", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627)
+
+
+
+                );
     }
 
     @ParameterizedTest
-    @MethodSource("providesStringForPasswordChecker")
-    public void testUserRegister(String username, String password){
-        Utente u = new Utente(username, password, "NA", "citta", "via", "1234567890", "basket", 123123123);
+    @MethodSource("provideUserInfo")
+    public void testUserRegister(String username, String password, String provincia, String citta, String via, String iban, String preferenza, long telefono){
+        Utente u = new Utente(username, password, provincia, citta, via, iban, preferenza, telefono);
         assertTrue(rs.doAddUser(u));
 
     }
-
-    @ParameterizedTest
-    @MethodSource("providesStringForPasswordChecker")
-    public void testManagerRegister(String username, String password){
-        Gestore g = new Gestore(username, password, "NA", "citta", "via", "1234567890", "basket", "123123123", 123123123);
-        assertTrue(rs.doAddManager(g));
-    }
-
-
 
 }

@@ -22,7 +22,7 @@ public class registrazioneServiceImpl implements registrazioneService {
         if (!patternP.matcher(utente.getProvincia()).matches()) return false;
         Pattern patternV = Pattern.compile("^[A-z 0-9]{1,30}$"); // Regex per via
         if (!patternV.matcher(utente.getVia()).matches()) return false;
-        Pattern patternN = Pattern.compile("^[0-9]{10,10}$"); // Regex per numero di telefono
+        Pattern patternN = Pattern.compile("^[0-9]{10}$"); // Regex per numero di telefono
         if (!patternN.matcher(String.valueOf(utente.getTelefono())).matches()) return false;
         Pattern patternPass = Pattern.compile("^(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,15}$"); // Regex per password
         if (!patternPass.matcher(utente.getPassword()).matches()) return false;

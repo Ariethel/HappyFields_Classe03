@@ -5,6 +5,7 @@ import model.ConnPool;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class gestioneGestoreImpl implements gestioneGestoreService {
 
@@ -132,7 +133,24 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
         return campi;
     }
 
-    public void doModificaCampo(String idC, String nome_c, int numero_giocatori, String provincia, String citta, String via, double costo, double lunghezza, double larghezza) {
+    public boolean doModificaCampo(Campo c){
+        Pattern pattern = Pattern.compile("^[A-z.]{1,30}$"); // Regex per nome
+        if(!pattern.matcher(c.getNome_c()).matches()) return false;
+        Pattern pattern1 = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
+        if(!pattern1.matcher(c.getProvincia()).matches()) return false;
+        Pattern pattern2 = Pattern.compile("^[A-z]$"); // Regex per citta
+        if(!pattern2.matcher(c.getCitta()).matches()) return false;
+        Pattern pattern3 = Pattern.compile("^[A-z0-9.]{1,30}$"); // Regex per via
+        if(!pattern3.matcher(c.getVia()).matches()) return false;
+        Pattern pattern5 = Pattern.compile("^[0-9]{0,500}$"); // Regex per costo
+        if(!pattern5.matcher(String.valueOf(c.getCosto())).matches()) return false;
+        Pattern pattern6 = Pattern.compile("^[0-9]{0,}$"); // Regex per lunghezza
+
+
+        Pattern pattern4 = Pattern.compile("^[0-9]{1,11}$"); // Regex per numero giocatori
+        if(!pattern4.matcher(String.valueOf(c.getNum_giocatori())).matches()) return false;
+
+
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("UPDATE campo SET nome_c = (?), numero_giocatori = (?), provincia = (?), " +
                     "citta = (?), via = (?), costo = (?), lunghezza = (?), larghezza = (?) WHERE nome_c = (?)");

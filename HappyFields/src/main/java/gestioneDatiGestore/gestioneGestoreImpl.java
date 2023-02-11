@@ -134,22 +134,23 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
     }
 
     public boolean doModificaCampo(String idc, String nome, int num_giocatori, String provincia, String citta, String via, double costo, double lunghezza, double larghezza){
-        Pattern pattern = Pattern.compile("^[A-z.]{1,30}$"); // Regex per nome
+        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,30}$"); // Regex per nome
         if(!pattern.matcher(nome).matches()) return false;
         Pattern pattern1 = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
         if(!pattern1.matcher(provincia).matches()) return false;
-        Pattern pattern2 = Pattern.compile("^[A-z]$"); // Regex per citta
+        Pattern pattern2 = Pattern.compile("^[A-z]{3,}$"); // Regex per citta
         if(!pattern2.matcher(citta).matches()) return false;
-        Pattern pattern3 = Pattern.compile("^[A-z0-9.]{1,30}$"); // Regex per via
+        Pattern pattern3 = Pattern.compile("^[A-z 0-9]{1,30}$"); // Regex per via
         if(!pattern3.matcher(via).matches()) return false;
-        Pattern pattern5 = Pattern.compile("^[1-9][0-9]{0,2}|500$"); // Regex per costo
+        //I problemi iniziano da questa
+       /* Pattern pattern5 = Pattern.compile("^(?:[1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500)$"); // Regex per costo
         if(!pattern5.matcher(String.valueOf(costo)).matches()) return false;
-        Pattern pattern6 = Pattern.compile("^[1-9][0-9]{0,2}|150$"); // Regex per lunghezza
+        Pattern pattern6 = Pattern.compile("^(?:[1-9]|[1-9][0-9]|1[0-4][0-9]|150)$"); // Regex per lunghezza
         if(!pattern6.matcher(String.valueOf(lunghezza)).matches()) return false;
-        Pattern pattern7 = Pattern.compile("^[1-9][0-9]{0,2}|50$"); // Regex per larghezza
+        Pattern pattern7 = Pattern.compile("^(?:[1-4][0-9]|50)$"); // Regex per larghezza
         if(!pattern7.matcher(String.valueOf(larghezza)).matches()) return false;
-        Pattern pattern4 = Pattern.compile("^[0-9]{1,11}$"); // Regex per numero giocatori
-        if(!pattern4.matcher(String.valueOf(num_giocatori)).matches()) return false;
+        Pattern pattern4 = Pattern.compile("^[0-1][0-9]|11$"); // Regex per numero giocatori
+        if(!pattern4.matcher(String.valueOf(num_giocatori)).matches()) return false;*/
 
 
         try (Connection conn = ConnPool.getConnection()) {

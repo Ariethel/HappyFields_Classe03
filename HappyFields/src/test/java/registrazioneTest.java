@@ -22,6 +22,8 @@ public class registrazioneTest {
                 Arguments.of("Antonio", "carlos2121!T", "SA", "", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
                 // Provincia troppo lunga
                 Arguments.of("Antonio", "carlos2121!T", "Sale", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
+                // Numero di telefono corto
+                Arguments.of("Antonio", "carlos2121!T", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 124561362 ),
                 // Via troppo lunga
                 Arguments.of("Antonio", "carlos2121!T", "SA", "Fisciano", "via Circumvallazione Tuoro Contrada Pietà 8", "iban", "preferenza", 1245613627 ),
                 // Password troppo corta e senza caratteri speciali

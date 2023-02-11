@@ -142,11 +142,11 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
         if(!pattern2.matcher(citta).matches()) return false;
         Pattern pattern3 = Pattern.compile("^[A-z0-9.]{1,30}$"); // Regex per via
         if(!pattern3.matcher(via).matches()) return false;
-        Pattern pattern5 = Pattern.compile("^[0-9]/d{0,9}(./d{1,3})?%?$"); // Regex per costo
+        Pattern pattern5 = Pattern.compile("^[1-9][0-9]{0,2}|500$"); // Regex per costo
         if(!pattern5.matcher(String.valueOf(costo)).matches()) return false;
-        Pattern pattern6 = Pattern.compile("^[0-9]/d{0,9}(./d{1,3})?%?$"); // Regex per lunghezza
+        Pattern pattern6 = Pattern.compile("^[1-9][0-9]{0,2}|150$"); // Regex per lunghezza
         if(!pattern6.matcher(String.valueOf(lunghezza)).matches()) return false;
-        Pattern pattern7 = Pattern.compile("^[0-9]/d{0,9}(./d{1,3})?%?$"); // Regex per larghezza
+        Pattern pattern7 = Pattern.compile("^[1-9][0-9]{0,2}|50$"); // Regex per larghezza
         if(!pattern7.matcher(String.valueOf(larghezza)).matches()) return false;
         Pattern pattern4 = Pattern.compile("^[0-9]{1,11}$"); // Regex per numero giocatori
         if(!pattern4.matcher(String.valueOf(num_giocatori)).matches()) return false;

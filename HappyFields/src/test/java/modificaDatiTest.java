@@ -1,6 +1,7 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import model.Campo;
 import model.Gestore;
 import model.Utente;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,20 +15,27 @@ import gestioneDatiGestore.*;
 
 
 public class modificaDatiTest {
-    gestioneGestoreService mds = new gestioneGestoreImpl();
+    gestioneGestoreService gs = new gestioneGestoreImpl();
 
     public static Stream<Arguments> provideUserInfo() {
         return Stream.of(
-                Arguments.of("Antonio Paolo Giovanni Tammaro Aniello Dos Santos Da Lima", "carlos2121!T", "SA", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
-                Arguments.of("Carlos!!$", "carlos2121!T", "SA", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
-                Arguments.of("Antonio", "carlos2121!T", "SA", "", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
-                Arguments.of("Antonio", "carlos2121!T", "Sale", "Fisciano", "Via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
-                Arguments.of("Antonio", "carlos2121!T", "SA", "Fisciano", "via Circumvallazione Tuoro Contrada Pietà 8", "iban", "preferenza", 1245613627 ),
-                Arguments.of("Antonio", "Carlos", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
-                Arguments.of("Antonio", "carlos21??", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627),
-                Arguments.of("Antonio", "Carlos2121!", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627)
+                Arguments.of("M.Lenzi","M.Lenzi",11,"SA", "Avellino", "Via Circumva", 120, 100, 40)
+                /*Arguments.of("M.Lenzi",11,"SA", "AvellinoviaguidoD'orso", "Via Circumvallazione 8", 120, 100, 40),
+                Arguments.of("M.Lenzi",11,"SAL", "Avellino", "Via Circumvallazione 8 Antonello Italiano", 120, 100, 40),
+                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8 Antonello Di Dio", 120, 100, 40),
+                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 620, 100, 40),
+                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 500, 40),
+                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 140),
+                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40)*/
         );
     };
+
+    @ParameterizedTest
+    @MethodSource("provideUserInfo")
+    public void testModificaCampi(String idc, String nome, int num_giocatori, String provincia, String citta, String via, double costo, double lunghezza, double larghezza){
+        assertTrue(gs.doModificaCampo(idc,nome,num_giocatori,provincia,citta,via,costo,lunghezza,larghezza));
+
+    }
 
 
 

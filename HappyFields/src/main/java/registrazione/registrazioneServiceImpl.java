@@ -16,7 +16,7 @@ public class registrazioneServiceImpl implements registrazioneService {
     public boolean doAddUser(Utente utente) {
         Pattern pattern = Pattern.compile("^[A-z0-9.#&]{1,30}$"); // Regex per username
         if (!pattern.matcher(utente.getUsername()).matches()) return false;
-        Pattern patternC = Pattern.compile("^[A-z]$"); // Regex per citta
+        Pattern patternC = Pattern.compile("^[A-z]{3,}$"); // Regex per citta
         if (!patternC.matcher(utente.getCitta()).matches()) return false;
         Pattern patternP = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
         if (!patternP.matcher(utente.getProvincia()).matches()) return false;

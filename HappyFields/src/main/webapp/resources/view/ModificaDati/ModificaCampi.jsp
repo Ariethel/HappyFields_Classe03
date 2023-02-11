@@ -35,10 +35,10 @@
     <h2 class="subtitolo">Modifica dati dei campi<span class="badge bg-secondary"></span></h2>
     <c:forEach var="c" items="${campi}">
         <div class="gruppoBottoni">
-            <!--<div class="input-group mb-3">
+            <div class="input-group mb-3">
                 <span class="input-group-text">E-mail</span>
                 <input type="hidden" name="idC" value="<c:out value="${c.nome_c}"/>"><br>
-            </div>-->
+            </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Nome</span>
                 <input type="text" name="nome" value="<c:out value="${c.nome_c}"/>"><br>

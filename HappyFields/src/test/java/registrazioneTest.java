@@ -22,9 +22,6 @@ public class registrazioneTest {
                 Arguments.of("Antonio", "Carlos", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627 ),
                 Arguments.of("Antonio", "carlos21??", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627),
                 Arguments.of("Antonio", "Carlos2121!", "SA", "Fisciano", "via Circumvallazione 8", "iban", "preferenza", 1245613627)
-
-
-
                 );
     }
 

@@ -142,16 +142,10 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
         if(!pattern2.matcher(citta).matches()) return false;
         Pattern pattern3 = Pattern.compile("^[A-z 0-9]{1,30}$"); // Regex per via
         if(!pattern3.matcher(via).matches()) return false;
-        //I problemi iniziano da questa
-       /* Pattern pattern5 = Pattern.compile("^(?:[1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500)$"); // Regex per costo
-        if(!pattern5.matcher(String.valueOf(costo)).matches()) return false;
-        Pattern pattern6 = Pattern.compile("^(?:[1-9]|[1-9][0-9]|1[0-4][0-9]|150)$"); // Regex per lunghezza
-        if(!pattern6.matcher(String.valueOf(lunghezza)).matches()) return false;
-        Pattern pattern7 = Pattern.compile("^(?:[1-4][0-9]|50)$"); // Regex per larghezza
-        if(!pattern7.matcher(String.valueOf(larghezza)).matches()) return false;
-        Pattern pattern4 = Pattern.compile("^[0-1][0-9]|11$"); // Regex per numero giocatori
-        if(!pattern4.matcher(String.valueOf(num_giocatori)).matches()) return false;*/
-
+        if (costo < 1 || costo > 500) return false;
+        if (lunghezza < 1 || lunghezza > 150) return false;
+        if (larghezza < 1 || larghezza > 50) return false;
+        if (num_giocatori < 1 || num_giocatori > 11) return false;
 
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("UPDATE campo SET nome_c = (?), numero_giocatori = (?), provincia = (?), " +

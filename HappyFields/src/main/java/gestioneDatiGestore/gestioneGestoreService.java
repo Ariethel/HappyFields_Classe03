@@ -17,6 +17,6 @@ public interface gestioneGestoreService {
     public void doChangeTelefono(String telefono, String id);
     public void doChangeIban(String Iban, String id);
     public ArrayList<Campo> doFetchCampiById(String id);
-    public void doModificaCampo(String idC, String nome_c, int numero_giocatori, String provincia, String citta, String via, double costo, double lunghezza, double larghezza);
+    public boolean doModificaCampo(Campo c);
     public void doAddCampo(Campo c);
 }

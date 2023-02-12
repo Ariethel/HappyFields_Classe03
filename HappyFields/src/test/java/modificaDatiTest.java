@@ -19,14 +19,16 @@ public class modificaDatiTest {
 
     public static Stream<Arguments> provideUserInfo() {
         return Stream.of(
-                Arguments.of("bombonera","avellino",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40)
-                /*Arguments.of("M.Lenzi",11,"SA", "AvellinoviaguidoD'orso", "Via Circumvallazione 8", 120, 100, 40),
-                Arguments.of("M.Lenzi",11,"SAL", "Avellino", "Via Circumvallazione 8 Antonello Italiano", 120, 100, 40),
-                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8 Antonello Di Dio", 120, 100, 40),
-                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 620, 100, 40),
-                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 500, 40),
-                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 140),
-                Arguments.of("M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40)*/
+                Arguments.of("bombonera","M. Lenzi",13,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                Arguments.of("bombonera","M. Lenzi",11,"SA", "AvellinoviaguidoD'orso", "Via Circumvallazione 8", 120, 100, 40),
+                Arguments.of("bombonera","M.Lenzi",11,"SAL", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8 Antonello Di Dio", 120, 100, 40),
+                Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 620, 100, 40),
+                Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 500, 40),
+                Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 140),
+                Arguments.of("bombonera","M.Lenzi Anto Di Capuo   ",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                Arguments.of("bombonera","M.Lenzi!;",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40)
         );
     };
 

@@ -134,7 +134,7 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
     }
 
     public boolean doModificaCampo(String idc, String nome, int num_giocatori, String provincia, String citta, String via, double costo, double lunghezza, double larghezza){
-        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,30}$"); // Regex per nome
+        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,20}$"); // Regex per nome
         if(!pattern.matcher(nome).matches()) return false;
         Pattern pattern1 = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
         if(!pattern1.matcher(provincia).matches()) return false;

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 public class persistenzaServiceImpl implements persistenzaService {
     public void doAddEvento(Evento e) {
         try (Connection conn = ConnPool.getConnection()) {
+
             PreparedStatement ps = conn.prepareStatement("INSERT INTO evento VALUES (?,?,?,?,?)");
             ps.setString(1, e.getNome());
             ps.setString(2, e.getSport().getNome_s());

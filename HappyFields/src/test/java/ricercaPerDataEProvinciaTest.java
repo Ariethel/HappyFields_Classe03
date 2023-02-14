@@ -8,6 +8,8 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import model.Campo ;
 import java.sql.Date;
+import java.sql.SQLData;
+import java.text.ParseException;
 import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
@@ -17,16 +19,14 @@ public class ricercaPerDataEProvinciaTest {
     gestioneEventiService ge = new gestioneEventiServiceImpl();
 
     public static Stream<Arguments> provideDataProvinciaInfo() {
-        //String str="2023-04-01";
-       // String str2="2021-02-15";
-        //java.sql.Date dateT = java.sql.Date.valueOf(str2);
-        //java.sql.Date dateT2 = java.sql.Date.valueOf(str);
-
-        String prov= "SA";
+        String str="2023-04-01";
+        String str2="2021-02-15";
+        java.sql.Date dateT = java.sql.Date.valueOf(str2);
+        java.sql.Date dateT2 = java.sql.Date.valueOf(str);
         return Stream.of(
-                Arguments.of("2022-04-01", "AV"),
-                Arguments.of("2023-04-01", "Avv"),
-                Arguments.of("2023-04-01", prov)
+                Arguments.of(dateT, "AV"),
+                Arguments.of(dateT, "Avv"),
+                Arguments.of(dateT2, "SA")
         );
     };
 

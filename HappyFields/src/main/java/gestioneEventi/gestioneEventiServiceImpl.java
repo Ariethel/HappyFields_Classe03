@@ -153,20 +153,19 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
 
     @Override
     public ArrayList<Evento> doRetriveBySearch(Date date, String provincia) {
-
         Pattern patternP = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
         if (!patternP.matcher(provincia).matches()) return null;
 
         long milisecondsAttuale = System.currentTimeMillis();
         long milisecondsProva = date.getTime();
-
         if(milisecondsProva<=milisecondsAttuale) return null;
+
 
         ArrayList<Evento> eventi = new ArrayList<>();
         try(Connection conn = ConnPool.getConnection()){
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE campo IN (SELECT nome_c FROM campo WHERE provincia = (?)) AND data_e = (?)");
-            ps.setDate(1, (java.sql.Date) date);
-            ps.setString(2, provincia);
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE campo IN (SELECT nome_c FROM campo WHERE provincia = (?)) AND data_e = '"+date+"'");
+            ps.setString(1, provincia);
+            //ps.setDate(2, (java.sql.Date) date);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 Evento e = new Evento();
@@ -182,9 +181,6 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
-        if(eventi.isEmpty()){
-            return null;
         }
         return eventi;
     }

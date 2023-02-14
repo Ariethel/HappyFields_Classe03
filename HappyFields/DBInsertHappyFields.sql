@@ -36,7 +36,7 @@ insert into evento values
 ('partita.tennis', 'tennis', 'palla d oro', '2023-03-18', 15.00),
 ('giochiamoInsieme', 'pallavolo', 'bombonera', '2023-03-20', 15.00),
 ('amanti del basket', 'basket', 'campetti nike','2023-04-21',17.30),
-('calciando', 'calcetto', 'real football', '023-03-22', 18.55),
+('calciando', 'calcetto', 'real football', '2023-03-22', 18.55),
 ('paddleLove', 'paddle', 'blue paddle club','2023-04-01',15.00),
 ('pallavolo-partita', 'pallavolo', 'sporting club','2023-03-24',20.00);
 

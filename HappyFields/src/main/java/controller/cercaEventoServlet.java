@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.text.ParseException;
 
 @WebServlet(name = "cercaEventoServlet", value = "/cercaEventoServlet")
 public class cercaEventoServlet extends HttpServlet {
@@ -24,8 +25,9 @@ public class cercaEventoServlet extends HttpServlet {
         ServletContext context = getServletContext();
         if (data == null)
             context.setAttribute("eventi", service.doRetriveBySearch(provincia));
-        else
+        else {
             context.setAttribute("eventi", service.doRetriveBySearch(data, provincia));
+        }
         response.sendRedirect("resources/view/BachecaEventi/EventiTrovati.jsp");
         /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/EventiTrovati.jsp");
         dispatcher.forward(request, response);*/

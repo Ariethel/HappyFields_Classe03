@@ -19,15 +19,25 @@ public class modificaDatiTest {
 
     public static Stream<Arguments> provideUserInfo() {
         return Stream.of(
+                // Numero giocatori troppo alto
                 Arguments.of("bombonera","M. Lenzi",13,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                // Città troppo lunga
                 Arguments.of("bombonera","M. Lenzi",11,"SA", "AvellinoviaguidoD'orso", "Via Circumvallazione 8", 120, 100, 40),
+                // Provincia troppo lunga
                 Arguments.of("bombonera","M.Lenzi",11,"SAL", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                // Via troppo lunga
                 Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8 Antonello Di Dio", 120, 100, 40),
+                // Costo troppo alto
                 Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 620, 100, 40),
+                // Lunghezza troppo lunga
                 Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 500, 40),
+                // Larghezza troppo lunga
                 Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 140),
+                // Nome troppo lungo
                 Arguments.of("bombonera","M.Lenzi Anto Di Capuo   ",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                // Nome con caratteri speciali
                 Arguments.of("bombonera","M.Lenzi!;",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40),
+                // Il test va a buon fine
                 Arguments.of("bombonera","M.Lenzi",11,"SA", "Avellino", "Via Circumvallazione 8", 120, 100, 40)
         );
     };

@@ -6,6 +6,7 @@ import gestioneEventi.gestioneEventiServiceImpl;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class gestioneEventiServiceImpl implements gestioneEventiService {
     public void doAddUserToEvent(Utente u, Evento e) {
@@ -152,6 +153,15 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
 
     @Override
     public ArrayList<Evento> doRetriveBySearch(Date date, String provincia) {
+
+        Pattern patternP = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
+        if (!patternP.matcher(provincia).matches()) return null;
+
+        long milisecondsAttuale = System.currentTimeMillis();
+        long milisecondsProva = date.getTime();
+
+        if(milisecondsProva<=milisecondsAttuale) return null;
+
         ArrayList<Evento> eventi = new ArrayList<>();
         try(Connection conn = ConnPool.getConnection()){
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE campo IN (SELECT nome_c FROM campo WHERE provincia = (?)) AND data_e = (?)");
@@ -172,6 +182,9 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+        if(eventi.isEmpty()){
+            return null;
         }
         return eventi;
     }

@@ -26,12 +26,10 @@ public class creazioneEventoTest {
         java.sql.Date dateT = java.sql.Date.valueOf(str2);
         java.sql.Date dateT2 = java.sql.Date.valueOf(str);
 
-
-
         return Stream.of(
                 //Nome troppo lungo
                 Arguments.of("Coppa con nome troppo lungo non entra      ok", spo,ca,dateT2, 20.00),//Funziona bisogna solo risolvere data
-                //Il campo “data”  viene prima della data attuale
+                //Il campo “data” viene prima della data attuale
                 Arguments.of("Coppa1", spo,ca, dateT, 20.00),
                 //L' orario è null
                 Arguments.of("Coppa2", spo,ca, dateT2, 0.00),

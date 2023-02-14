@@ -15,13 +15,11 @@ public class persistenzaServiceImpl implements persistenzaService {
         Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,50}$"); // Regex per nome
         if (!pattern.matcher(e.getNome()).matches()) return false;
 
-
-       /* long milisecondsAttuale = System.currentTimeMillis();
+        long milisecondsAttuale = System.currentTimeMillis();
         java.sql.Date data = (Date) e.getData();
         long milisecondsProva = data.getTime();
-        //milisecondsProva= milisecondsProva-(19*365*24*60*60*1000);
-        //milisecondsAttuale = milisecondsAttuale-(19*365*24*60*60*1000);
-        if(milisecondsProva<=milisecondsAttuale) return false;**/
+
+        if(milisecondsProva<=milisecondsAttuale) return false;
 
 
 

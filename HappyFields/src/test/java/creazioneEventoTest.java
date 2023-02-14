@@ -22,13 +22,15 @@ public class creazioneEventoTest {
         Campo ca = new Campo("San Siro","SA","Salerno","Alfani",50.00,100,50,11);
         Sport spo = new Sport("Basket");
         java.sql.Date dateT1 = new java.sql.Date(5000,8,07);
-        java.sql.Date dateT2 = new java.sql.Date(0172,8,07);
+        String str="2023-02-15";
+        java.sql.Date dateT2 = java.sql.Date.valueOf(str);
+
 
         return Stream.of(
                 //Nome troppo lungo
                // Arguments.of("Coppa con nome troppo lungo perp assare il testcase", spo,ca,dateT1, 20.00)//Funziona bisogna solo risolvere data
                // Il campo “data”  viene prima della data attuale
-                Arguments.of("Coppa ", spo,ca,dateT2, 20.00)
+                Arguments.of("Coppa", spo,ca, dateT2, 20.00)
 
                 /* La creazione va a buon fine
                 Arguments.of("Coppa", "Basket", "San Siro", "07/08/23", 20.00 )**/

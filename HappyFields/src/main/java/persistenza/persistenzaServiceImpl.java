@@ -1,6 +1,5 @@
 package persistenza;
 
-import gestioneEventi.gestioneEventiServiceImpl;
 import model.ConnPool;
 import model.Evento;
 
@@ -8,9 +7,24 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.Instant;
+import java.util.regex.Pattern;
 
 public class persistenzaServiceImpl implements persistenzaService {
-    public void doAddEvento(Evento e) {
+    public boolean doAddEvento(Evento e) {
+        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,50}$"); // Regex per nome
+        if (!pattern.matcher(e.getNome()).matches()) return false;
+
+
+       /* long milisecondsAttuale = System.currentTimeMillis();
+        java.sql.Date data = (Date) e.getData();
+        long milisecondsProva = data.getTime();
+        //milisecondsProva= milisecondsProva-(19*365*24*60*60*1000);
+        //milisecondsAttuale = milisecondsAttuale-(19*365*24*60*60*1000);
+        if(milisecondsProva<=milisecondsAttuale) return false;**/
+
+
+
         try (Connection conn = ConnPool.getConnection()) {
 
             PreparedStatement ps = conn.prepareStatement("INSERT INTO evento VALUES (?,?,?,?,?)");
@@ -20,9 +34,16 @@ public class persistenzaServiceImpl implements persistenzaService {
             ps.setDate(4, (Date) e.getData());
             ps.setDouble(5, e.getOra());
             ps.executeUpdate();
+
+            return true;
         } catch (SQLException i) {
             i.printStackTrace();
         }
+        return false;
+
+
+
+
     }
 
     public void doAddSport(String s) {

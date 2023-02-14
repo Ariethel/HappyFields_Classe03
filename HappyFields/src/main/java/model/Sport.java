@@ -2,6 +2,10 @@ package model;
 
 public class Sport {
 
+    public Sport (){
+
+    }
+
     public Sport (String nome_s){
         this.nome_s = nome_s;
     }

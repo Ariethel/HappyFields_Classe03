@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class persistenzaServiceImpl implements persistenzaService {
     public boolean doAddEvento(Evento e) {
-        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,50}$"); // Regex per nome
+        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,20}$"); // Regex per nome
         if (!pattern.matcher(e.getNome()).matches()) return false;
 
         long milisecondsAttuale = System.currentTimeMillis();
@@ -20,6 +20,7 @@ public class persistenzaServiceImpl implements persistenzaService {
         long milisecondsProva = data.getTime();
 
         if(milisecondsProva<=milisecondsAttuale) return false;
+        if(e.getOra()<=0) return false;
 
 
 

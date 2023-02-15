@@ -25,8 +25,14 @@ public class creaEventoServlet extends HttpServlet {
         double ora = Double.parseDouble((request.getParameter("ora")).replaceAll(":", "."));
         persistenzaService service2 = new persistenzaServiceImpl();
         Evento e = new Evento(nome, sport, campo, data, ora);
-        service2.doAddEventoAttesa(e);
-        response.sendRedirect("resources/view/eventoCreatoCorrettamente.jsp");
+        Boolean b = service2.doAddEventoAttesa(e);
+        String page;
+        if (!b)
+            page = "resources/view/CreaEvento/CreaEventoErrore.html";
+        else
+            page = "resources/view/eventoCreatoCorrettamente.jsp";
+
+        response.sendRedirect(page);
     }
 
     @Override

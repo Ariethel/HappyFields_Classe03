@@ -186,6 +186,9 @@ public class gestioneEventiServiceImpl implements gestioneEventiService {
     }
 
     public ArrayList<Evento> doRetriveBySearch(String provincia) {
+        Pattern patternP = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
+        if (!patternP.matcher(provincia).matches()) return null;
+
         ArrayList<Evento> eventi = new ArrayList<>();
         try(Connection conn = ConnPool.getConnection()){
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM evento WHERE campo IN (SELECT nome_c FROM campo WHERE provincia = (?))");

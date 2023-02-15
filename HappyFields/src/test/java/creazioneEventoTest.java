@@ -21,7 +21,7 @@ public class creazioneEventoTest {
     public static Stream<Arguments> provideUserInfo() {
         Campo ca = new Campo("San Siro","SA","Salerno","Alfani",50.00,100,50,11);
         Sport spo = new Sport("Basket");
-        String str="2023-02-15";
+        String str="2023-03-15";
         String str2="2021-02-15";
         java.sql.Date dateT = java.sql.Date.valueOf(str2);
         java.sql.Date dateT2 = java.sql.Date.valueOf(str);
@@ -34,7 +34,7 @@ public class creazioneEventoTest {
                 //L' orario è null
                 Arguments.of("Coppa2", spo,ca, dateT2, 0.00),
                 //La creazione va a buon fine
-                Arguments.of("Coppa3", spo,ca, dateT2, 20.00)
+                Arguments.of("Coppa3", spo ,ca, dateT2, 20.00)
 
         );
 
@@ -44,7 +44,7 @@ public class creazioneEventoTest {
     @MethodSource("provideUserInfo")
     public void testCreazioneEvento(String nome,Sport sport, Campo campo , java.sql.Date dateAttuale, double ora){
         Evento e = new Evento(nome,sport, campo, dateAttuale, ora);
-        assertTrue(ps.doAddEvento(e));
+        assertTrue(ps.doAddEventoAttesa(e));
 
     }
 

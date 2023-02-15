@@ -9,7 +9,7 @@ public interface persistenzaService {
 
     public void doDropEvento(String nome);
 
-    public void doAddEventoAttesa(Evento e);
+    public boolean doAddEventoAttesa(Evento e);
 
     public void doDropGestore(String nome);
 

@@ -12,18 +12,6 @@ import java.util.regex.Pattern;
 
 public class persistenzaServiceImpl implements persistenzaService {
     public boolean doAddEvento(Evento e) {
-        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,20}$"); // Regex per nome
-        if (!pattern.matcher(e.getNome()).matches()) return false;
-
-        long milisecondsAttuale = System.currentTimeMillis();
-        java.sql.Date data = (Date) e.getData();
-        long milisecondsProva = data.getTime();
-
-        if(milisecondsProva<=milisecondsAttuale) return false;
-        if(e.getOra()<=0) return false;
-
-
-
         try (Connection conn = ConnPool.getConnection()) {
 
             PreparedStatement ps = conn.prepareStatement("INSERT INTO evento VALUES (?,?,?,?,?)");
@@ -33,7 +21,6 @@ public class persistenzaServiceImpl implements persistenzaService {
             ps.setDate(4, (Date) e.getData());
             ps.setDouble(5, e.getOra());
             ps.executeUpdate();
-
             return true;
         } catch (SQLException i) {
             i.printStackTrace();
@@ -88,7 +75,18 @@ public class persistenzaServiceImpl implements persistenzaService {
 
 
 
-    public void doAddEventoAttesa(Evento e) {
+    public boolean doAddEventoAttesa(Evento e) {
+        Pattern pattern = Pattern.compile("^[A-z 0-9.#&]{1,20}$"); // Regex per nome
+        if (!pattern.matcher(e.getNome()).matches()) return false;
+
+        long milisecondsAttuale = System.currentTimeMillis();
+        java.sql.Date data = (Date) e.getData();
+        long milisecondsProva = data.getTime();
+
+        if(milisecondsProva<=milisecondsAttuale) return false;
+        if(e.getOra()<=0) return false;
+
+
         try (Connection conn = ConnPool.getConnection()) {
             PreparedStatement ps = conn.prepareStatement("INSERT INTO attesa VALUES (?,?,?,?,?)");
             ps.setString(1, e.getNome());
@@ -97,8 +95,11 @@ public class persistenzaServiceImpl implements persistenzaService {
             ps.setDate(4, (Date) e.getData());
             ps.setDouble(5, e.getOra());
             ps.executeUpdate();
+            return true;
         } catch (SQLException i) {
             i.printStackTrace();
         }
+
+        return false;
     }
 }

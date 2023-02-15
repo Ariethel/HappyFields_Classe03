@@ -28,9 +28,13 @@ public class cercaEventoServlet extends HttpServlet {
         else {
             context.setAttribute("eventi", service.doRetriveBySearch(data, provincia));
         }
-        response.sendRedirect("resources/view/BachecaEventi/EventiTrovati.jsp");
-        /*RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/BachecaEventi/EventiTrovati.jsp");
-        dispatcher.forward(request, response);*/
+        String page;
+        if (context.getAttribute("eventi") == null)
+            page = "resources/view/BachecaEventi/VisualizzaEventiUtenteErrore.html";
+        else
+            page = "resources/view/BachecaEventi/EventiTrovati.jsp";
+        response.sendRedirect(page);
+
     }
 
     @Override

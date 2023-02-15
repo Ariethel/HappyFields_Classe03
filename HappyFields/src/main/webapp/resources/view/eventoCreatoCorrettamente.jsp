@@ -12,5 +12,13 @@
 </head>
 <body>
   <h1>Evento creato correttamente</h1>
+  <script>
+      function redirect(){
+          location.href = "../../home/indexUtente.html";
+      }
+
+      setTimeout(redirect,3000);
+
+  </script>
 </body>
 </html>

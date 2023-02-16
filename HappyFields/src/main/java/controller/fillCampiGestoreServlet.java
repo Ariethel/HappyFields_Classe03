@@ -23,9 +23,7 @@ public class fillCampiGestoreServlet extends HttpServlet {
         ServletContext context = getServletContext();
         context.setAttribute("campi", campi);
         response.sendRedirect("resources/view/ModificaDati/ModificaCampi.jsp");
-        /*request.setAttribute("campi", campi);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/ModificaDati/ModificaCampi.jsp");
-        dispatcher.forward(request, response);*/
+
     }
 
     @Override

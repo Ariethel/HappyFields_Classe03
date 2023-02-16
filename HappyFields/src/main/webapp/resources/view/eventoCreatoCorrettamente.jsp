@@ -16,7 +16,6 @@
       function redirect(){
           location.href = "../../home/indexUtente.html";
       }
-
       setTimeout(redirect,3000);
 
   </script>

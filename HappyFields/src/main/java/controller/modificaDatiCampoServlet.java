@@ -13,9 +13,13 @@ public class modificaDatiCampoServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         gestioneGestoreService service = new gestioneGestoreImpl();
-        service.doModificaCampo(request.getParameter("idC"), request.getParameter("nome"), Integer.parseInt(request.getParameter("num_giocatori")), request.getParameter("provincia"), request.getParameter("citta"), request.getParameter("via"), Double.parseDouble(request.getParameter("costo")), Double.parseDouble(request.getParameter("lunghezza")), Double.parseDouble(request.getParameter("larghezza")));
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resources/view/ModificaDati/ModificaDatiCampo.jsp");
-        dispatcher.forward(request, response);
+        boolean b = service.doModificaCampo(request.getParameter("idC"), request.getParameter("nome"), Integer.parseInt(request.getParameter("num_giocatori")), request.getParameter("provincia"), request.getParameter("citta"), request.getParameter("via"), Double.parseDouble(request.getParameter("costo")), Double.parseDouble(request.getParameter("lunghezza")), Double.parseDouble(request.getParameter("larghezza")));
+        String page;
+        if (!b)
+            page = "resources/view/ModificaDati/ModificaDatiErrore.html";
+        else
+            page = "resources/view/AreaUtenteGestore/AreaGestore.jsp";
+        response.sendRedirect(page);
     }
 
     @Override

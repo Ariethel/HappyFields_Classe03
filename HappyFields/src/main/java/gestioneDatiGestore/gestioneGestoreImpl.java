@@ -160,6 +160,11 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
             ps.setDouble(8, larghezza);
             ps.setString(9, idc);// idcampo da modificare
             ps.executeUpdate();
+
+            PreparedStatement ps2 = conn.prepareStatement("UPDATE gestisce SET campo = (?) WHERE campo = (?)");
+            ps2.setString(1, nome);
+            ps2.setString(2, idc);
+            ps2.executeUpdate();
             return true;
         } catch (SQLException i) {
             i.printStackTrace();

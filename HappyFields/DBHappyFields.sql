@@ -9,7 +9,8 @@ create table utente(
     via varchar(255) not null,
     telefono long not null,
     iban varchar(27),
-    preferenza varchar(255) references Sport.nome_s,
+    preferenza varchar(255) references Sport.nome_s
+    ON UPDATE CASCADE,
     primary key(username, pass)
 );
 
@@ -33,9 +34,10 @@ create table sport(
 
 create table evento(
 	titolo varchar(255) not null,
-    sport varchar(255) references sport.nome_s,
-    #luogo calcolabile da campo
-    campo varchar(255) references campo.nome_c,
+    sport varchar(255) references sport.nome_s
+    ON UPDATE CASCADE,
+    campo varchar(255) references campo.nome_c
+    ON UPDATE CASCADE,
     data_e date not null,
     ora double not null,
     primary key (titolo, campo)
@@ -54,27 +56,33 @@ create table campo(
 
 create table prenotazione(
 	numero_prenotazione int primary key auto_increment,
-    admin_prenotazione varchar(255) references utente.username,
+    admin_prenotazione varchar(255) references utente.username
+    ON UPDATE CASCADE,
     evento varchar(255) references evento.titolo
 );
 
 create table gestisce(
-	gestore varchar(255) references gestore.username_g,
-    campo varchar(255) references campo.nome_c,
+	gestore varchar(255) references gestore.username_g
+    ON UPDATE CASCADE,
+    campo varchar(255) references campo.nome_c
+    ON UPDATE CASCADE,
     primary key (gestore, campo)
 );
 
 create table partecipa(
-	username varchar(255) references utente.username,
-    nomeEvento varchar(255) references evento.titolo,
+	username varchar(255) references utente.username
+    ON UPDATE CASCADE,
+    nomeEvento varchar(255) references evento.titolo
+    ON UPDATE CASCADE,
     primary key (username, nomeEvento)
 );
 
 create table attesa(
 	titolo varchar(255) not null,
-    sport varchar(255) references sport.nome_s,
-    #luogo calcolabile da campo
-    campo varchar(255) references campo.nome_c,
+    sport varchar(255) references sport.nome_s
+    ON UPDATE CASCADE,
+    campo varchar(255) references campo.nome_c
+    ON UPDATE CASCADE,
     data_e date not null,
     ora double not null,
     primary key (titolo, campo)

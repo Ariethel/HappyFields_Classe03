@@ -8,10 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Happy Fields</title>
+    <title>Evento Creato Correttamente</title>
+    <link rel="stylesheet" href="eventoCreatoCorrettamente.css">
 </head>
 <body>
   <h1>Evento creato correttamente</h1>
+  <div class="div-img">
+      <img class="img" src="eventoOk.webp">
+  </div>
+  <br>
+  <br>
+
   <script>
       function redirect(){
           location.href = "../../home/indexUtente.html";

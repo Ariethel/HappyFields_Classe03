@@ -41,13 +41,13 @@ insert into evento values
 ('pallavolo-partita', 'pallavolo', 'sporting club','2023-03-24',20.00);
 
 insert into campo values
-('pollicino', 22, 'NA', 'saviao', 'v.gemito', 100.00, 100.00, 65.50 ),
+('pollicino', 8, 'NA', 'saviano', 'v.gemito', 100.00, 100.00, 30.50 ),
 ('palla d\oro',2 , 'SA', 'Baronissi', 'delle castagne', 15.00, 23.00, 10.15),
-('bombonera', 12, 'AV', 'avella', 'degli ulivi',60.00 ,18.00 ,9.00 ),
-('campetti nike',10 , 'SA', 'nocera inferore', 'via dei pomodori', 50.00, 28.00, 15.00),
-('real football', 10, 'SA', 'mercato sanseverino', 'via della fontana',50.00 ,35.00 , 20.00 ),
+('bombonera', 10, 'AV', 'avella', 'degli ulivi',60.00 ,18.00 ,9.00 ),
+('campetti nike',5 , 'SA', 'nocera inferore', 'via dei pomodori', 50.00, 28.00, 15.00),
+('real football', 5, 'SA', 'mercato sanseverino', 'via della fontana',50.00 ,35.00 , 20.00 ),
 ('blue paddle club', 4, 'SA', 'baronissi', 'via genovesi', 40.00, 20.00, 10.00),
-('sporting club', 12, 'NA', 'saviano', 'antonio ciccone', 70.00 ,20.00 , 11.00 );
+('sporting club', 6, 'NA', 'saviano', 'antonio ciccone', 70.00 ,20.00 , 11.00 );
 
 insert into prenotazione values
 (1, 'annachiara01', 'partitina'),

@@ -138,9 +138,9 @@ public class gestioneGestoreImpl implements gestioneGestoreService {
         if(!pattern.matcher(nome).matches()) return false;
         Pattern pattern1 = Pattern.compile("^[A-Z]{2}$"); // Regex per provincia
         if(!pattern1.matcher(provincia).matches()) return false;
-        Pattern pattern2 = Pattern.compile("^[A-z]{3,}$"); // Regex per citta
+        Pattern pattern2 = Pattern.compile("^[A-z ]{3,}$"); // Regex per citta
         if(!pattern2.matcher(citta).matches()) return false;
-        Pattern pattern3 = Pattern.compile("^[A-z 0-9]{1,30}$"); // Regex per via
+        Pattern pattern3 = Pattern.compile("^[A-z 0-9.]{1,30}$"); // Regex per via
         if(!pattern3.matcher(via).matches()) return false;
         if (costo < 1 || costo > 500) return false;
         if (lunghezza < 1 || lunghezza > 150) return false;

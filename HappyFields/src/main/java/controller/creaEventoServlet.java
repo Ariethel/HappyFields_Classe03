@@ -30,7 +30,7 @@ public class creaEventoServlet extends HttpServlet {
         if (!b)
             page = "resources/view/CreaEvento/CreaEventoErrore.html";
         else
-            page = "resources/view/eventoCreatoCorrettamente.jsp";
+            page = "resources/view/CreaEvento/eventoCreatoCorrettamente.jsp";
 
         response.sendRedirect(page);
     }

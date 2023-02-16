@@ -6,6 +6,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/resources/view/Login/Login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/resources/view/Login" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/resources/view/Registrazione/RegistrazioneUtente.jsp" value="file://$PROJECT_DIR$/src/main/webapp/resources/view/Registrazione" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/resources/view/creaEvento.jsp" value="file://$PROJECT_DIR$/src/main/webapp/resources/view" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/resources/view/registrazioneOrLogin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/resources/view" />
       </map>
     </option>
   </component>

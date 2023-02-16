@@ -21,10 +21,9 @@
 
   <script>
       function redirect(){
-          location.href = "../../home/indexUtente.html";
+          location.href = "../../../home/indexUtente.html";
       }
       setTimeout(redirect,3000);
-
   </script>
 </body>
 </html>
